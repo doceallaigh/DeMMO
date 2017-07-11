@@ -1,4 +1,4 @@
-#include "MeshFactory.h"
+#include "MeshFactory.hpp"
 
 Mesh* MeshFactory::Generate(std::string fileName) 
 {
