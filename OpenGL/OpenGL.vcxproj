@@ -131,15 +131,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="OpenGLRenderManager.hpp" />
-    <ClInclude Include="OpenGLWindow.hpp" />
-    <ClInclude Include="OpenGLWindowManager.hpp" />
+    <ClInclude Include="Header\OpenGLRenderManager.hpp" />
+    <ClInclude Include="Header\OpenGLWindow.hpp" />
+    <ClInclude Include="Header\OpenGLWindowManager.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="OpenGLRenderManager.cpp" />
-    <ClCompile Include="OpenGLWindow.cpp" />
-    <ClCompile Include="OpenGLWindowManager.cpp" />
+    <ClCompile Include="Source\Main.cpp" />
+    <ClCompile Include="Source\OpenGLRenderManager.cpp" />
+    <ClCompile Include="Source\OpenGLWindow.cpp" />
+    <ClCompile Include="Source\OpenGLWindowManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

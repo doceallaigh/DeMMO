@@ -110,31 +110,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Camera.hpp" />
-    <ClInclude Include="Color.hpp" />
-    <ClInclude Include="FragmentShader.hpp" />
-    <ClInclude Include="Material.hpp" />
-    <ClInclude Include="Mesh.hpp" />
-    <ClInclude Include="MeshFactory.hpp" />
-    <ClInclude Include="MeshManager.hpp" />
-    <ClInclude Include="OBJFactory.hpp" />
-    <ClInclude Include="RenderManager.hpp" />
-    <ClInclude Include="RenderTarget.hpp" />
-    <ClInclude Include="Screen.hpp" />
-    <ClInclude Include="Shader.hpp" />
-    <ClInclude Include="Sprite.hpp" />
-    <ClInclude Include="Texture.hpp" />
-    <ClInclude Include="VertexShader.hpp" />
-    <ClInclude Include="Window.hpp" />
-    <ClInclude Include="WindowManager.hpp" />
+    <ClInclude Include="Header\Camera.hpp" />
+    <ClInclude Include="Header\Color.hpp" />
+    <ClInclude Include="Header\FragmentShader.hpp" />
+    <ClInclude Include="Header\Material.hpp" />
+    <ClInclude Include="Header\Mesh.hpp" />
+    <ClInclude Include="Header\MeshFactory.hpp" />
+    <ClInclude Include="Header\MeshManager.hpp" />
+    <ClInclude Include="Header\OBJFactory.hpp" />
+    <ClInclude Include="Header\RenderManager.hpp" />
+    <ClInclude Include="Header\RenderTarget.hpp" />
+    <ClInclude Include="Header\Screen.hpp" />
+    <ClInclude Include="Header\Shader.hpp" />
+    <ClInclude Include="Header\Sprite.hpp" />
+    <ClInclude Include="Header\Texture.hpp" />
+    <ClInclude Include="Header\VertexShader.hpp" />
+    <ClInclude Include="Header\Window.hpp" />
+    <ClInclude Include="Header\WindowManager.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Mesh.cpp" />
-    <ClCompile Include="MeshFactory.cpp" />
-    <ClCompile Include="OBJFactory.cpp" />
-    <ClCompile Include="RenderManager.cpp" />
-    <ClCompile Include="Window.cpp" />
+    <ClCompile Include="Source\Main.cpp" />
+    <ClCompile Include="Source\Mesh.cpp" />
+    <ClCompile Include="Source\MeshFactory.cpp" />
+    <ClCompile Include="Source\OBJFactory.cpp" />
+    <ClCompile Include="Source\RenderManager.cpp" />
+    <ClCompile Include="Source\Window.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

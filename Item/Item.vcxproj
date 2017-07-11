@@ -111,10 +111,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="EquipmentTemplate.hpp" />
-    <ClInclude Include="Equippable.hpp" />
-    <ClInclude Include="Item.hpp" />
-    <ClInclude Include="ItemTemplate.hpp" />
+    <ClInclude Include="Header\EquipmentTemplate.hpp" />
+    <ClInclude Include="Header\Equippable.hpp" />
+    <ClInclude Include="Header\Item.hpp" />
+    <ClInclude Include="Header\ItemTemplate.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

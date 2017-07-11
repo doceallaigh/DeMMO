@@ -18,16 +18,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="EquipmentTemplate.hpp">
+    <ClInclude Include="Header\EquipmentTemplate.hpp">
       <Filter>Header Files\ItemTemplate</Filter>
     </ClInclude>
-    <ClInclude Include="Equippable.hpp">
+    <ClInclude Include="Header\Equippable.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Item.hpp">
+    <ClInclude Include="Header\Item.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ItemTemplate.hpp">
+    <ClInclude Include="Header\ItemTemplate.hpp">
       <Filter>Header Files\ItemTemplate</Filter>
     </ClInclude>
   </ItemGroup>
