@@ -50,8 +50,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Control", "Control\Control.
 		{2E3F91EE-85DA-4416-8763-D7930C290309} = {2E3F91EE-85DA-4416-8763-D7930C290309}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Graphics.Test", "Graphics.Test\Graphics.Test.vcxproj", "{71CB9AAE-0975-4AB1-989C-A64D6CA21087}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DeMMO", "DeMMO\DeMMO.vcxproj", "{9F97F2C9-44B8-4BDD-A9A6-B3014F798C4A}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Client", "Client\Client.vcxproj", "{22EF5A70-A158-4E58-9223-321FBD2CAB7C}"
@@ -163,16 +161,6 @@ Global
 		{007DB89C-5A2F-4322-B10C-E5B335480A16}.Release|x64.Build.0 = Release|x64
 		{007DB89C-5A2F-4322-B10C-E5B335480A16}.Release|x86.ActiveCfg = Release|Win32
 		{007DB89C-5A2F-4322-B10C-E5B335480A16}.Release|x86.Build.0 = Release|Win32
-		{71CB9AAE-0975-4AB1-989C-A64D6CA21087}.Debug|ARM.ActiveCfg = Debug|Win32
-		{71CB9AAE-0975-4AB1-989C-A64D6CA21087}.Debug|x64.ActiveCfg = Debug|x64
-		{71CB9AAE-0975-4AB1-989C-A64D6CA21087}.Debug|x64.Build.0 = Debug|x64
-		{71CB9AAE-0975-4AB1-989C-A64D6CA21087}.Debug|x86.ActiveCfg = Debug|Win32
-		{71CB9AAE-0975-4AB1-989C-A64D6CA21087}.Debug|x86.Build.0 = Debug|Win32
-		{71CB9AAE-0975-4AB1-989C-A64D6CA21087}.Release|ARM.ActiveCfg = Release|Win32
-		{71CB9AAE-0975-4AB1-989C-A64D6CA21087}.Release|x64.ActiveCfg = Release|x64
-		{71CB9AAE-0975-4AB1-989C-A64D6CA21087}.Release|x64.Build.0 = Release|x64
-		{71CB9AAE-0975-4AB1-989C-A64D6CA21087}.Release|x86.ActiveCfg = Release|Win32
-		{71CB9AAE-0975-4AB1-989C-A64D6CA21087}.Release|x86.Build.0 = Release|Win32
 		{9F97F2C9-44B8-4BDD-A9A6-B3014F798C4A}.Debug|ARM.ActiveCfg = Debug|Win32
 		{9F97F2C9-44B8-4BDD-A9A6-B3014F798C4A}.Debug|x64.ActiveCfg = Debug|x64
 		{9F97F2C9-44B8-4BDD-A9A6-B3014F798C4A}.Debug|x64.Build.0 = Debug|x64
@@ -226,8 +214,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{71CB9AAE-0975-4AB1-989C-A64D6CA21087} = {FB22E6FF-A989-4A4F-A1AB-138E6DD93019}
 	EndGlobalSection
 EndGlobal
