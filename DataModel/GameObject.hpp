@@ -1,5 +1,5 @@
 #pragma once
-#include "../Graphics/Mesh.h"
+#include "../Graphics/Mesh.hpp"
 
 class GameObject 
 {

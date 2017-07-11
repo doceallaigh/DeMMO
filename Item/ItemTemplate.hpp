@@ -1,6 +1,6 @@
 #pragma once
-#include "Item.h"
-#include "..\DataModel\Stats.h"
+#include "Item.hpp"
+#include "..\DataModel\Stats.hpp"
 
 template<typename T>
 class ItemTemplate

@@ -1,8 +1,8 @@
 #pragma once
 #include <string>
 
-#include "Mesh.h"
-#include "../DataModel/AssetFactory.h"
+#include "Mesh.hpp"
+#include "../DataModel/AssetFactory.hpp"
 
 class OBJFactory : public AssetFactory<Mesh> 
 {

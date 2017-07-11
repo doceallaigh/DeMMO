@@ -1,5 +1,5 @@
 #pragma once
-#include "../Graphics/RenderManager.h"
+#include "../Graphics/RenderManager.hpp"
 
 class OpenGLRenderManager : public RenderManager 
 {

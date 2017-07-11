@@ -1,6 +1,6 @@
 #pragma once
-#include "../Graphics/WindowManager.h"
-#include "OpenGLWindow.h"
+#include "../Graphics/WindowManager.hpp"
+#include "OpenGLWindow.hpp"
 
 class OpenGLWindowManager : public WindowManager<OpenGLWindow>
 {

@@ -1,6 +1,6 @@
-#include "CraftProcess.h"
-#include "..\Item\Equippable.h"
-#include "..\Item\ItemTemplate.h"
+#include "CraftProcess.hpp"
+#include "..\Item\Equippable.hpp"
+#include "..\Item\ItemTemplate.hpp"
 
 int main()
 {

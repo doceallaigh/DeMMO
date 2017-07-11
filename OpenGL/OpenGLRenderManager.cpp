@@ -1,5 +1,5 @@
-#include "GL/glew.h"
-#include "OpenGLRenderManager.h"
+#include "GL/glew.hpp"
+#include "OpenGLRenderManager.hpp"
 
 bool OpenGLRenderManager::Initialize() 
 {

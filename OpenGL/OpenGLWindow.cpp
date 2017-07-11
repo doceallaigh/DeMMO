@@ -2,7 +2,7 @@
 #include <glm/ext.hpp>
 #include <iostream>
 #include <fstream>
-#include "OpenGLWindow.h"
+#include "OpenGLWindow.hpp"
 
 OpenGLWindow::OpenGLWindow() 
 {

@@ -110,26 +110,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Camera.h" />
-    <ClInclude Include="Color.h" />
-    <ClInclude Include="FragmentShader.h" />
-    <ClInclude Include="Material.h" />
-    <ClInclude Include="Mesh.h" />
-    <ClInclude Include="MeshManager.h" />
-    <ClInclude Include="OBJFactory.h" />
-    <ClInclude Include="RenderManager.h" />
-    <ClInclude Include="RenderTarget.h" />
-    <ClInclude Include="Screen.h" />
-    <ClInclude Include="Shader.h" />
-    <ClInclude Include="Sprite.h" />
-    <ClInclude Include="Texture.h" />
-    <ClInclude Include="VertexShader.h" />
-    <ClInclude Include="Window.h" />
-    <ClInclude Include="WindowManager.h" />
+    <ClInclude Include="Camera.hpp" />
+    <ClInclude Include="Color.hpp" />
+    <ClInclude Include="FragmentShader.hpp" />
+    <ClInclude Include="Material.hpp" />
+    <ClInclude Include="Mesh.hpp" />
+    <ClInclude Include="MeshFactory.hpp" />
+    <ClInclude Include="MeshManager.hpp" />
+    <ClInclude Include="OBJFactory.hpp" />
+    <ClInclude Include="RenderManager.hpp" />
+    <ClInclude Include="RenderTarget.hpp" />
+    <ClInclude Include="Screen.hpp" />
+    <ClInclude Include="Shader.hpp" />
+    <ClInclude Include="Sprite.hpp" />
+    <ClInclude Include="Texture.hpp" />
+    <ClInclude Include="VertexShader.hpp" />
+    <ClInclude Include="Window.hpp" />
+    <ClInclude Include="WindowManager.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="MeshFactory.cpp" />
     <ClCompile Include="OBJFactory.cpp" />
     <ClCompile Include="RenderManager.cpp" />
     <ClCompile Include="Window.cpp" />

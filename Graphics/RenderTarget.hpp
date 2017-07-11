@@ -1,6 +1,6 @@
 #pragma once
-#include "Camera.h"
-#include "Mesh.h"
+#include "Camera.hpp"
+#include "Mesh.hpp"
 
 class RenderTarget 
 {

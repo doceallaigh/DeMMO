@@ -1,7 +1,7 @@
 #pragma once
 #include <list>
 #include <map>
-#include "Stat.h"
+#include "Stat.hpp"
 
 class Stats
 {

@@ -1,5 +1,5 @@
 #pragma once
-#include "RenderTarget.h"
+#include "RenderTarget.hpp"
 
 class Window : public RenderTarget
 {

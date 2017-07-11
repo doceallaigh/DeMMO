@@ -1,6 +1,6 @@
 #pragma once
-#include "ItemTemplate.h"
-#include "Equippable.h"
+#include "ItemTemplate.hpp"
+#include "Equippable.hpp"
 
 template<typename T>
 class EquipmentTemplate : public ItemTemplate<T>

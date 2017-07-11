@@ -1,9 +1,9 @@
 #pragma once
 #include <vector>
 
-#include "Material.h"
-#include "../DataModel/Transform.h"
-#include "../DataModel/Vector.h"
+#include "Material.hpp"
+#include "../DataModel/Transform.hpp"
+#include "../DataModel/Vector.hpp"
 
 class Mesh 
 {

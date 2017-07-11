@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "OpenGLWindowManager.h"
-#include "OpenGLWindow.h"
-#include "../DataModel/AssetManager.h"
-#include "../DataModel/Transform.h"
-#include "../DataModel/Vector.h"
-#include "../Graphics/OBJFactory.h"
-#include "../Graphics/Mesh.h"
+#include "OpenGLWindowManager.hpp"
+#include "OpenGLWindow.hpp"
+#include "../DataModel/AssetManager.hpp"
+#include "../DataModel/Transform.hpp"
+#include "../DataModel/Vector.hpp"
+#include "../Graphics/OBJFactory.hpp"
+#include "../Graphics/Mesh.hpp"
 
 #pragma comment(lib, "Graphics.lib")
 #pragma comment(lib, "glew.lib")

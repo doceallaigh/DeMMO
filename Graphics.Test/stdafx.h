@@ -5,9 +5,9 @@
 
 #pragma once
 
-#include "targetver.h"
+#include "targetver.hpp"
 
 // Headers for CppUnitTest
-#include "CppUnitTest.h"
+#include "CppUnitTest.hpp"
 
 // TODO: reference additional headers your program requires here

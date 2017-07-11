@@ -1,7 +1,7 @@
 #pragma once
 #include <list>
-#include "Item.h"
-#include "..\DataModel\Stat.h"
+#include "Item.hpp"
+#include "..\DataModel\Stat.hpp"
 
 class Equippable : public Item
 {

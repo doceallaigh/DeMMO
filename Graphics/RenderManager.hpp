@@ -1,7 +1,7 @@
 #pragma once
-#include "Camera.h"
-#include "RenderTarget.h"
-#include "Mesh.h"
+#include "Camera.hpp"
+#include "RenderTarget.hpp"
+#include "Mesh.hpp"
 
 class RenderManager
 {

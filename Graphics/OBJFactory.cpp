@@ -2,7 +2,7 @@
 
 #include <cstdio>
 
-#include "OBJFactory.h"
+#include "OBJFactory.hpp"
 
 Mesh* OBJFactory::Generate(std::string fileName) 
 {

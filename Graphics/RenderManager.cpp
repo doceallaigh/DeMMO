@@ -1,4 +1,4 @@
-#include "RenderManager.h"
+#include "RenderManager.hpp"
 
 void RenderManager::BindCameraToTarget(const Camera& camera, const RenderTarget& target) 
 {

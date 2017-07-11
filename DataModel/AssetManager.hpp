@@ -2,7 +2,7 @@
 #include <string>
 #include <map>
 
-#include "AssetFactory.h"
+#include "AssetFactory.hpp"
 
 template<typename T>
 class AssetManager 

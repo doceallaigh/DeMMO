@@ -1,6 +1,6 @@
 #pragma once
-#include "../DataModel/Transform.h"
-#include "Color.h"
+#include "../DataModel/Transform.hpp"
+#include "Color.hpp"
 
 struct Camera 
 {

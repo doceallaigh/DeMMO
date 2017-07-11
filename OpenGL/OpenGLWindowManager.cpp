@@ -1,6 +1,6 @@
 #include <GL/glew.h>
 
-#include "OpenGLWindowManager.h"
+#include "OpenGLWindowManager.hpp"
 
 OpenGLWindowManager* OpenGLWindowManager::instance = nullptr;
 

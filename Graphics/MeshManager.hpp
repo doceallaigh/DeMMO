@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../DataModel/AssetManager.h"
-#include "Mesh.h"
+#include "../DataModel/AssetManager.hpp"
+#include "Mesh.hpp"
 
 class MeshManager : public AssetManager<Mesh>
 {

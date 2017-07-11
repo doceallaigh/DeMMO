@@ -1,6 +1,6 @@
 #pragma once
 #include <GLFW/glfw3.h>
-#include "../Graphics/Window.h"
+#include "../Graphics/Window.hpp"
 
 class OpenGLWindow : public Window 
 {

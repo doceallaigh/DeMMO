@@ -19,14 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AssetManager.h" />
-    <ClInclude Include="AssetFactory.h" />
-    <ClInclude Include="GameObject.h" />
-    <ClInclude Include="Process.h" />
-    <ClInclude Include="Stat.h" />
-    <ClInclude Include="Stats.h" />
-    <ClInclude Include="Transform.h" />
-    <ClInclude Include="Vector.h" />
+    <ClInclude Include="AssetManager.hpp" />
+    <ClInclude Include="AssetFactory.hpp" />
+    <ClInclude Include="GameObject.hpp" />
+    <ClInclude Include="Process.hpp" />
+    <ClInclude Include="Stat.hpp" />
+    <ClInclude Include="Stats.hpp" />
+    <ClInclude Include="Transform.hpp" />
+    <ClInclude Include="Vector.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="AssetManager.tpp" />

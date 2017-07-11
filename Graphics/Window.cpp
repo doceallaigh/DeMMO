@@ -1,4 +1,4 @@
-#include "Window.h"
+#include "Window.hpp"
 bool Window::GetFullScreen() 
 {
 	return this->fullScreen;

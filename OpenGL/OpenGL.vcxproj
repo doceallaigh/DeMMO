@@ -131,9 +131,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="OpenGLRenderManager.h" />
-    <ClInclude Include="OpenGLWindow.h" />
-    <ClInclude Include="OpenGLWindowManager.h" />
+    <ClInclude Include="OpenGLRenderManager.hpp" />
+    <ClInclude Include="OpenGLWindow.hpp" />
+    <ClInclude Include="OpenGLWindowManager.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />

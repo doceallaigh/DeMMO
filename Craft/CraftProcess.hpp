@@ -1,8 +1,8 @@
 #pragma once
-#include "..\DataModel\Process.h"
-#include "..\Item\Item.h"
-#include "..\Item\ItemTemplate.h"
-#include "..\DataModel\Process.h"
+#include "..\DataModel\Process.hpp"
+#include "..\Item\Item.hpp"
+#include "..\Item\ItemTemplate.hpp"
+#include "..\DataModel\Process.hpp"
 
 template<typename T> 
 class CraftProcess : Process
