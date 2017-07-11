@@ -13,6 +13,10 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Template Files">
+      <UniqueIdentifier>{948fccfb-3658-4e9e-9cd2-a9d70f25912d}</UniqueIdentifier>
+      <Extensions>tpp</Extensions>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\AssetFactory.hpp">
@@ -50,7 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Template\AssetManager.tpp">
-      <Filter>Source Files</Filter>
+      <Filter>Template Files</Filter>
     </None>
   </ItemGroup>
 </Project>

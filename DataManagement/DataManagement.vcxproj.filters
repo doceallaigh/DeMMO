@@ -13,5 +13,8 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Template Files">
+      <UniqueIdentifier>{17addae7-6961-4c67-b1e2-dd7d2ecce23a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

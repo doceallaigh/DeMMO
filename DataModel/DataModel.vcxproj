@@ -29,11 +29,11 @@
     <ClInclude Include="Header\Vector.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Template\AssetManager.tpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="Source\GameObject.cpp" />
     <ClCompile Include="Source\Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Template\AssetManager.tpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{2E3F91EE-85DA-4416-8763-D7930C290309}</ProjectGuid>

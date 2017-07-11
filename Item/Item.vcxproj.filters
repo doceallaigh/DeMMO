@@ -16,6 +16,10 @@
     <Filter Include="Header Files\ItemTemplate">
       <UniqueIdentifier>{5b52a182-4b7b-45de-b9dd-23f990afea37}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Template Files">
+      <UniqueIdentifier>{248252fc-406f-4129-9e4d-3ab4db9ad753}</UniqueIdentifier>
+      <Extensions>tpp</Extensions>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\EquipmentTemplate.hpp">
