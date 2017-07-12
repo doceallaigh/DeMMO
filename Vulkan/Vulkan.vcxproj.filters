@@ -14,7 +14,7 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="Template Files">
-      <UniqueIdentifier>{a5105d0a-0653-4dd5-8a67-14215964d66c}</UniqueIdentifier>
+      <UniqueIdentifier>{e49b827d-3932-4905-87c3-a6fef2082aa4}</UniqueIdentifier>
       <Extensions>tpp</Extensions>
     </Filter>
   </ItemGroup>
