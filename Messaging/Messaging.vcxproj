@@ -111,6 +111,50 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Header\Interfaces\IMessage.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Header\Interfaces\IMessageBus.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Header\Interfaces\IMessageConsumer.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Header\Interfaces\IMessageConsumerEndpoint.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Header\Interfaces\IMessageDecorator.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Header\Interfaces\IMessageDependency.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Header\Interfaces\IMessageProducer.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Header\Interfaces\IMessageProducerEndpoint.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Header\Interfaces\IMessageQueue.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Header\Interfaces\IMessageTopic.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Header\MessageBus.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
