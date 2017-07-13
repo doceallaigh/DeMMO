@@ -151,7 +151,43 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="Header\Message.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="Header\MessageBus.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Header\MessageConsumer.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Header\MessageConsumerEndpoint.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Header\MessageDecorator.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Header\MessageDependency.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Header\MessageProducer.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Header\MessageProducerEndpoint.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Header\MessageQueue.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Header\MessageTopic.hpp">
       <SubType>
       </SubType>
     </ClInclude>
