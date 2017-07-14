@@ -1,6 +1,7 @@
 /* Message.hpp
  * Class description:
- *     <Message description goes here>
+ *     This class acts as the basic implementation of the IMessage interface.
+ *     For more information on the contract described by this interface, see IMessage.hpp
  * * */
 
 #pragma once
@@ -15,7 +16,8 @@
 
 #ifndef Message_hpp
 #define Message_hpp
-const class Message : public virtual IMessage
+template <typename ... TData>
+const class Message<TData ...> : public virtual IMessage<TData ...>
 {
 public:
 #pragma region Public Constructors & Destructor
@@ -43,6 +45,9 @@ public:
 #pragma region Public Virtual Methods
     // PURE VIRTUAL METHODS
     // VIRTUAL METHODS
+    virtual const std::shared_ptr<const IMessageTopic&>& GetTopic (void) const override;
+
+    virtual const std::shared_ptr<const TData&>& GetData (void) const override;
 #pragma endregion
 
 #pragma region Public Non-virtual Methods
