@@ -14,7 +14,7 @@
 
 #ifndef IMessageTopic_hpp
 #define IMessageTopic_hpp
-class IMessageTopic 
+const class IMessageTopic 
 {
 public:
 #pragma region Public Virtual Methods

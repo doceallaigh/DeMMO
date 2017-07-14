@@ -15,7 +15,7 @@
 
 #ifndef MessageTopic_hpp
 #define MessageTopic_hpp
-class MessageTopic : public virtual IMessageTopic
+const class MessageTopic : public virtual IMessageTopic
 {
 public:
 #pragma region Public Constructors & Destructor
