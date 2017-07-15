@@ -1,7 +1,8 @@
 /* MessageQueue.hpp
- * Class description:
- *     <MessageQueue description goes here>
- * * */
+* Class description:
+*     This class acts as the basic implementation of the IMessageQueue interface.
+*     For more information on the contract described by this interface, see IMessageQueue.hpp
+* * */
 
 #pragma once
 
@@ -43,6 +44,9 @@ public:
 #pragma region Public Virtual Methods
     // PURE VIRTUAL METHODS
     // VIRTUAL METHODS
+    virtual void SubscribeToTopic (const IMessageConsumerEndpoint& validatorEndPoint, const IMessageTopic&& topic) override;
+
+    virtual bool IsSubscribedToTopic (const IMessageProducerEndpoint& validatorEndPoint, const IMessageTopic&& topic) const override;
 #pragma endregion
 
 #pragma region Public Non-virtual Methods

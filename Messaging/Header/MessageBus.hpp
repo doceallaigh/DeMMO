@@ -1,6 +1,7 @@
 /* MessageBus.hpp
  * Class description:
- *     <MessageBus description goes here>
+ *     This class acts as the basic implementation of the IMessageBus interface.
+ *     For more information on the contract described by this interface, see IMessageBus.hpp
  * * */
 
 #pragma once

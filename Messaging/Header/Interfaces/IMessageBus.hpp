@@ -1,6 +1,8 @@
 /* IMessageBus.hpp
  * Interface description:
- *     <IMessageBus description goes here>
+ *     This file defines the MessageBus contract, which allows messages to be published and routed to subscribing modules.
+ *     This contract promises the following:
+ *         1. Messages sent to this module are routed to all modules subscribing to that message's topic
  * * */
 
 #pragma once
@@ -10,15 +12,20 @@
 #pragma endregion
 
 #pragma region Local Includes
+#include "IMessage.hpp"
+#include "IMessageProducer.hpp"
 #pragma endregion
 
 #ifndef IMessageBus_hpp
 #define IMessageBus_hpp
-class IMessageBus 
+class IMessageBus : public virtual IMessageProducer
 {
 public:
 #pragma region Public Virtual Methods
     // PURE VIRTUAL METHODS
+    // TODO_HIGH A decision must be made here
+    template <typename ... TData>
+    virtual void PublishMessage (const std::shared_ptr<IMessage<TData ...>&>& message) = 0;
 #pragma endregion
 };
 #endif // !IMessageBus_hpp
