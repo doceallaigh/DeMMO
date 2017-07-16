@@ -1,6 +1,7 @@
 /* MessageConsumerEndpoint.hpp
  * Class description:
- *     <MessageConsumerEndpoint description goes here>
+ *     This class acts as the basic implementation of the IMessageConsumerEndpoint interface.
+ *     For more information on the contract described by this interface, see IMessageConsumerEndpoint.hpp
  * * */
 
 #pragma once
@@ -10,12 +11,12 @@
 #pragma endregion
 
 #pragma region Local Includes
-#include "Interfaces/IMessageConsumer.hpp"
+#include "Interfaces/IMessageConsumerEndpoint.hpp"
 #pragma endregion
 
 #ifndef MessageConsumerEndpoint_hpp
 #define MessageConsumerEndpoint_hpp
-class MessageConsumerEndpoint : public virtual IMessageConsumer
+class MessageConsumerEndpoint : public virtual IMessageConsumerEndpoint
 {
 public:
 #pragma region Public Constructors & Destructor

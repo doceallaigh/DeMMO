@@ -16,8 +16,7 @@
 
 #ifndef Message_hpp
 #define Message_hpp
-template <typename ... TData>
-const class Message<TData ...> : public virtual IMessage<TData ...>
+const class Message : public virtual IMessage
 {
 public:
 #pragma region Public Constructors & Destructor
@@ -47,7 +46,7 @@ public:
     // VIRTUAL METHODS
     virtual const std::shared_ptr<const IMessageTopic&>& GetTopic (void) const override;
 
-    virtual const std::shared_ptr<const TData&>& GetData (void) const override;
+    virtual const std::string& GetData (void) const override;
 #pragma endregion
 
 #pragma region Public Non-virtual Methods

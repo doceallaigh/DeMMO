@@ -11,6 +11,7 @@
 // INCLUDES
 #pragma region Library Includes
 #include <memory>
+#include <string>
 #pragma endregion
 
 #pragma region Local Includes
@@ -19,15 +20,14 @@
 
 #ifndef IMessage_hpp
 #define IMessage_hpp
-template <typename ... TData>
-const class IMessage<TData ...>
+const class IMessage
 {
 public:
 #pragma region Public Virtual Methods
     // PURE VIRTUAL METHODS
     virtual const std::shared_ptr<const IMessageTopic&>& GetTopic(void) const = 0;
 
-    virtual const std::shared_ptr<const TData&>& GetData (void) const = 0;
+    virtual const std::string& GetData (void) const = 0;
 #pragma endregion
 };
 #endif // !IMessage_hpp
