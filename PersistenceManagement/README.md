@@ -1,4 +1,4 @@
-# DataManagement
+# PersistenceManagement
 This project handles all long-term persistence related responsibilities, including:
 
 Persistence methodology control (DB vs raw file for different components)
