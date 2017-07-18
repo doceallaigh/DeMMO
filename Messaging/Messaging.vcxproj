@@ -151,6 +151,10 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="Header\Interfaces\ISubscriptionCache.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="Header\Message.hpp">
       <SubType>
       </SubType>
@@ -188,6 +192,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="Header\MessageTopic.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Header\SubscriptionCache.hpp">
       <SubType>
       </SubType>
     </ClInclude>
