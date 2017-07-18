@@ -9,15 +9,21 @@
 
 // INCLUDES
 #pragma region Library Includes
+#include <memory>
 #pragma endregion
 
 #pragma region Local Includes
-#include "IMessage.hpp"
 #include "IMessageProducer.hpp"
 #pragma endregion
 
 #ifndef IMessageBus_hpp
 #define IMessageBus_hpp
+
+#pragma region Forward Declarations
+class IMessage;
+class IMessageConsumer;
+#pragma endregion
+
 class IMessageBus : public virtual IMessageProducer
 {
 public:
@@ -25,6 +31,8 @@ public:
     // PURE VIRTUAL METHODS
     // TODO_HIGH A decision must be made here
     virtual void PublishMessage (const std::shared_ptr<const IMessage> message) = 0;
+
+    virtual void AddConsumer (std::shared_ptr<IMessageConsumer> consumer) override = 0;
 #pragma endregion
 };
 #endif // !IMessageBus_hpp
