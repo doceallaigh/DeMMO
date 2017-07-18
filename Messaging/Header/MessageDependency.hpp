@@ -1,6 +1,7 @@
 /* MessageDependency.hpp
  * Class description:
- *     <MessageDependency description goes here>
+ *     This class acts as the basic implementation of the IMessageDependency interface.
+ *     For more information on the contract described by this interface, see IMessageDependency.hpp
  * * */
 
 #pragma once
@@ -43,6 +44,7 @@ public:
 #pragma region Public Virtual Methods
     // PURE VIRTUAL METHODS
     // VIRTUAL METHODS
+    virtual bool IsSatisfied (void) const override;
 #pragma endregion
 
 #pragma region Public Non-virtual Methods
