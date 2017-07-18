@@ -24,8 +24,7 @@ public:
 #pragma region Public Virtual Methods
     // PURE VIRTUAL METHODS
     // TODO_HIGH A decision must be made here
-    template <typename ... TData>
-    virtual void PublishMessage (const std::shared_ptr<IMessage<TData ...>&>& message) = 0;
+    virtual void PublishMessage (const std::shared_ptr<const IMessage> message) = 0;
 #pragma endregion
 };
 #endif // !IMessageBus_hpp
