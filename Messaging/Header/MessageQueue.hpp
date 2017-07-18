@@ -44,9 +44,6 @@ public:
 #pragma region Public Virtual Methods
     // PURE VIRTUAL METHODS
     // VIRTUAL METHODS
-    virtual void SubscribeToTopic (const IMessageConsumerEndpoint& validatorEndPoint, const IMessageTopic&& topic) override;
-
-    virtual bool IsSubscribedToTopic (const IMessageProducerEndpoint& validatorEndPoint, const IMessageTopic&& topic) const override;
 #pragma endregion
 
 #pragma region Public Non-virtual Methods
