@@ -1,9 +1,9 @@
 /* IMessage.hpp
  * Interface description:
  *     This API describes the basic unit by which modules trigger work for each other.
- *     This contract promises the following:
- *         1. Data held within the context of this contract are immutable
- *         2. The consumer of this data is responsible for acting on it (the message itself cannot explicitly the work to be done)
+ *     This contract promises the following about its implementations:
+ *         1. The implementation provides access to an unchanging topic, which allows it to be used by the MessageBus to route it to its destination(s)
+ *         2. The implementation provides access to an unchanging identifier.  This identifier is presumed to be unique, but this is not programatically enforced.
  * * */
 
 #pragma once
@@ -11,7 +11,6 @@
 // INCLUDES
 #pragma region Library Includes
 #include <memory>
-#include <string>
 #pragma endregion
 
 #pragma region Local Includes
@@ -20,14 +19,16 @@
 
 #ifndef IMessage_hpp
 #define IMessage_hpp
+typedef unsigned int messageId_t;
+
 const class IMessage
 {
 public:
 #pragma region Public Virtual Methods
     // PURE VIRTUAL METHODS
-    virtual const std::shared_ptr<const IMessageTopic&>& GetTopic(void) const = 0;
+    virtual const std::shared_ptr<const IMessageTopic> GetTopic(void) const = 0;
 
-    virtual const std::string& GetData (void) const = 0;
+    virtual const messageId_t GetId (void) const = 0;
 #pragma endregion
 };
 #endif // !IMessage_hpp
