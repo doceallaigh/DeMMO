@@ -127,10 +127,6 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="Header\Interfaces\IMessageDecorator.hpp">
-      <SubType>
-      </SubType>
-    </ClInclude>
     <ClInclude Include="Header\Interfaces\IMessageDependency.hpp">
       <SubType>
       </SubType>
@@ -168,10 +164,6 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="Header\MessageConsumerEndpoint.hpp">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="Header\MessageDecorator.hpp">
       <SubType>
       </SubType>
     </ClInclude>
