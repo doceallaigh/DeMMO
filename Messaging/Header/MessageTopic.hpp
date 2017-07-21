@@ -1,12 +1,14 @@
 /* MessageTopic.hpp
  * Class description:
- *     <MessageTopic description goes here>
+ *     This class acts as the basic implementation of the IMessageTopic interface.
+ *     For more information on the contract described by this interface, see IMessageTopic.hpp
  * * */
 
 #pragma once
 
 // INCLUDES
 #pragma region Library Includes
+#include <memory>
 #pragma endregion
 
 #pragma region Local Includes
@@ -43,6 +45,9 @@ public:
 #pragma region Public Virtual Methods
     // PURE VIRTUAL METHODS
     // VIRTUAL METHODS
+    virtual messageTopicIdentifier_t GetId (void) const override;
+
+    virtual std::vector<const std::shared_ptr<IMessageTopic>> GetSubTopics (void) const override;
 #pragma endregion
 
 #pragma region Public Non-virtual Methods
