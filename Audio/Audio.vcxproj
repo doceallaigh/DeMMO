@@ -18,6 +18,24 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Header\Interfaces\IAudioCompsite.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Header\Interfaces\IAudioFilter.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Header\Interfaces\IAudioLayer.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Header\Interfaces\IAudioPlayer.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{CD18A9D8-C6BD-494C-8D80-98F7AE3F421D}</ProjectGuid>
