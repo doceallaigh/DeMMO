@@ -1,14 +1,5 @@
-/* IMessageConsumerEndpoint.hpp
- * Interface description:
- *     This file describes the MessageConsumerEndpoint, which serves to obfuscate 
- *     the production end of the MessageQueue from the message consumer.
- *     This contract allows the consumer to:
- *         1. Lazily retrieve Messages from the queue/producer
- * * */
-
 #pragma once
 
-// INCLUDES
 #pragma region Library Includes
 #include <memory>
 #pragma endregion
@@ -16,19 +7,28 @@
 #pragma region Local Includes
 #pragma endregion
 
-#ifndef IMessageConsumerEndpoint_hpp
-#define IMessageConsumerEndpoint_hpp
-
 #pragma region Forward Declarations
 class IMessage;
-#pragma endregion 
+#pragma endregion
 
+#pragma region Type Definitions
+#pragma endregion
+
+/*! \brief Serves to obfuscate the production end of the MessageQueue from the message consumer
+ *
+ * \remarks Allows the consumer to: 
+ *     1. Lazily retrieve Messages from the queue/producer
+ * */
 class IMessageConsumerEndpoint
 {
 public:
-#pragma region Public Virtual Methods
-    // PURE VIRTUAL METHODS
-    virtual const std::shared_ptr<const IMessage> ReceiveMessage (void) = 0;
+#pragma region Destructor
+    //! \cond Default Destructor
+    virtual ~IMessageConsumerEndpoint(void) = default;
+    //! \endcond
+#pragma endregion
+
+#pragma region Public Methods
+    virtual const std::shared_ptr<const IMessage> ReceiveMessage(void) = 0;
 #pragma endregion
 };
-#endif // !IMessageConsumerEndpoint_hpp

@@ -1,24 +1,30 @@
-/* IMessageConsumer.hpp
- * Interface description:
- *     <IMessageConsumer description goes here>
- * * */
-
 #pragma once
 
-// INCLUDES
 #pragma region Library Includes
 #pragma endregion
 
 #pragma region Local Includes
 #pragma endregion
 
-#ifndef IMessageConsumer_hpp
-#define IMessageConsumer_hpp
-class IMessageConsumer 
+#pragma region Forward Declarations
+#pragma endregion
+
+#pragma region Type Definitions
+#pragma endregion
+
+/*! \brief <Brief description goes here>
+ *
+ * <Detailed description goes here>
+ * */
+class IMessageConsumer
 {
 public:
-#pragma region Public Virtual Methods
-    // PURE VIRTUAL METHODS
+#pragma region Destructor
+    //! \cond Default Destructor
+    virtual ~IMessageConsumer(void) = default;
+    //! \endcond
+#pragma endregion
+
+#pragma region Public Methods
 #pragma endregion
 };
-#endif // !IMessageConsumer_hpp
