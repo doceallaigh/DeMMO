@@ -25,9 +25,6 @@
     <ClInclude Include="Header\MessageBus.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Interfaces\IMessageQueue.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Header\Interfaces\IMessage.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -67,9 +64,6 @@
     <ClInclude Include="Header\MessageDependency.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Header\MessageQueue.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Header\MessageTopic.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -77,6 +71,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Header\SubscriptionCache.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MessageQueueFactory.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Interfaces\IMessageConsumerEndpointFactory.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Interfaces\IMessageProducerEndpointFactory.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Interfaces\IMessageQueueIdFactory.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
