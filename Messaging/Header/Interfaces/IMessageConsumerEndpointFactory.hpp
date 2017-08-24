@@ -9,10 +9,10 @@
 
 #pragma region Forward Declarations
 class IMessageConsumerEndpoint;
-class messageQueueId_t;
 #pragma endregion
 
 #pragma region Type Definitions
+typedef unsigned long messageQueueId_t;
 #pragma endregion
 
 /*! \brief Connects and 
@@ -29,6 +29,6 @@ public:
 #pragma endregion
 
 #pragma region Public Methods
-    virtual std::unique_ptr<IMessageConsumerEndpoint> GenerateConsumerEndpoint(messageQueueId_t messageQueueId) = 0;
+    virtual std::shared_ptr<IMessageConsumerEndpoint> GenerateConsumerEndpoint(messageQueueId_t messageQueueId) = 0;
 #pragma endregion
 };
