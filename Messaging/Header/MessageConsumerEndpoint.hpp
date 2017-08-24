@@ -44,7 +44,7 @@ public:
 #pragma region Public Virtual Methods
     // PURE VIRTUAL METHODS
     // VIRTUAL METHODS
-    virtual const std::shared_ptr<const IMessage> ReceiveMessage (void) override = 0;
+    virtual const std::shared_ptr<const IMessage> ReceiveMessage (void) override;
 #pragma endregion
 
 #pragma region Public Non-virtual Methods
