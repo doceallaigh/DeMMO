@@ -13,6 +13,8 @@
 #include "Interfaces/IMessageProducerEndpoint.hpp"
 #pragma endregion
 
+class IMessageConsumerEndpoint;
+
 #ifndef MessageProducerEndpoint_hpp
 #define MessageProducerEndpoint_hpp
 class MessageProducerEndpoint : public virtual IMessageProducerEndpoint
@@ -27,6 +29,9 @@ public:
 
     // MOVE CONSTRUCTOR
     // MessageProducerEndpoint (const MessageProducerEndpoint &&original) noexcept;
+
+    // CUSTOM CONSTRUCTORS
+    MessageProducerEndpoint(const std::shared_ptr<IMessageConsumerEndpoint> consumerEndpoint);
 
     // DESTRUCTOR
     // ~MessageProducerEndpoint (void) noexcept;
