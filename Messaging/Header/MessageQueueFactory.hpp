@@ -1,25 +1,29 @@
 #pragma once
 
 #pragma region Library Includes
+#include <memory>
+#include <unordered_map>
 #pragma endregion
 
 #pragma region Local Includes
+#include "Interfaces/IMessageConsumerEndpointFactory.hpp"
+#include "Interfaces/IMessageProducerEndpointFactory.hpp"
+#include "Interfaces/IMessageQueueIdFactory.hpp"
 #pragma endregion
 
 #pragma region Forward Declarations
+class IMessageConsumerEndpoint;
+class IMessageProducerEndpoint;
 #pragma endregion
 
 #pragma region Type Definitions
 #pragma endregion
-#include "Interfaces/IMessageConsumerEndpoint.hpp"
-#include "Interfaces/IMessageProducerEndpoint.hpp"
-#include "Interfaces/IMessageQueueIdFactory.hpp"
 
 /*! \brief <Brief description goes here>
  * 
  * <Detailed description goes here>
  * */
-class MessageQueueFactory : public virtual IMessageConsumerEndpoint, public virtual IMessageProducerEndpoint, public virtual IMessageQueueIdFactory
+class MessageQueueFactory : public virtual IMessageQueueIdFactory, public virtual IMessageConsumerEndpointFactory, public virtual IMessageProducerEndpointFactory
 {
 public:
 #pragma region Operators
@@ -60,6 +64,11 @@ private:
 
 public:
 #pragma region Public Methods
+    virtual messageQueueId_t GenerateMessageQueueId(void) override;
+
+    virtual std::shared_ptr<IMessageConsumerEndpoint> GenerateConsumerEndpoint(messageQueueId_t messageQueueId) override;
+
+    virtual std::shared_ptr<IMessageProducerEndpoint> GenerateProducerEndpoint(messageQueueId_t messageQueueId) override;
 #pragma endregion
 
 protected:
@@ -80,5 +89,8 @@ protected:
 
 private:
 #pragma region Private Fields
+    messageQueueId_t currentMessageQueueId;
+
+    std::unordered_map<messageQueueId_t, std::pair<std::shared_ptr<IMessageConsumerEndpoint>, std::shared_ptr<IMessageProducerEndpoint>>> messageQueueMap;
 #pragma endregion
 };
