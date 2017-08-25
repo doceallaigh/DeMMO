@@ -43,6 +43,7 @@ public:
 #pragma region Public Virtual Methods
     // PURE VIRTUAL METHODS
     // VIRTUAL METHODS
+    virtual void SetMessagingEndpoint(const std::shared_ptr<IMessagingConsumerEndpoint> endpoint) override;
 #pragma endregion
 
 #pragma region Public Non-virtual Methods

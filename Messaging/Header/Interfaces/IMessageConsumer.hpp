@@ -1,20 +1,20 @@
 #pragma once
 
 #pragma region Library Includes
+#include <memory>
 #pragma endregion
 
 #pragma region Local Includes
 #pragma endregion
 
 #pragma region Forward Declarations
+class IMessagingConsumerEndpoint;
 #pragma endregion
 
 #pragma region Type Definitions
 #pragma endregion
 
-/*! \brief <Brief description goes here>
- *
- * <Detailed description goes here>
+/*! \brief An API to allow association with a consumer-side messaging endpoint
  * */
 class IMessageConsumer
 {
@@ -26,5 +26,6 @@ public:
 #pragma endregion
 
 #pragma region Public Methods
+    virtual void SetMessagingEndpoint(const std::shared_ptr<IMessagingConsumerEndpoint> endpoint) = 0;
 #pragma endregion
 };
