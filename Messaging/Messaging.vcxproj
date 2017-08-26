@@ -201,6 +201,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\MessageBus.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="Source\MessageQueueFactory.cpp">
       <SubType>
       </SubType>

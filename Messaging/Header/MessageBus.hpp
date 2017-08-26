@@ -8,11 +8,16 @@
 
 // INCLUDES
 #pragma region Library Includes
+#include <unordered_map>
 #pragma endregion
 
 #pragma region Local Includes
 #include "Interfaces/IMessageBus.hpp"
 #pragma endregion
+
+class ISubscriptionCache;
+class IMessageProducerEndpoint;
+typedef unsigned long messageQueueId_t;
 
 #ifndef MessageBus_hpp
 #define MessageBus_hpp
@@ -25,6 +30,9 @@ public:
 
     // COPY CONSTRUCTOR
     // MessageBus (const MessageBus &original);
+
+    // CUSTOM CONSTRUCTORS
+    MessageBus(std::unordered_map<const messageQueueId_t, std::shared_ptr<ISubscriptionCache>> subscriptionCacheMap);
 
     // MOVE CONSTRUCTOR
     // MessageBus (const MessageBus &&original) noexcept;
@@ -44,6 +52,9 @@ public:
 #pragma region Public Virtual Methods
     // PURE VIRTUAL METHODS
     // VIRTUAL METHODS
+    virtual void PublishMessage(const std::shared_ptr<const IMessage> message) override;
+
+    virtual void AddConsumer(std::shared_ptr<IMessageConsumer> consumer) override;
 #pragma endregion
 
 #pragma region Public Non-virtual Methods
@@ -94,7 +105,9 @@ private:
 
 #pragma region Private Fields
     // SERVICES
+    std::unordered_map<const messageQueueId_t, std::shared_ptr<ISubscriptionCache>> subscriptionCacheMap;
     // COLLECTIONS
+    std::unordered_map<const messageQueueId_t, std::shared_ptr<IMessageProducerEndpoint>> queueMap;
     // OBJECTS
     // PRIMITIVES
 #pragma endregion

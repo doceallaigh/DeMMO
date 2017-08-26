@@ -26,11 +26,11 @@ public:
 #pragma endregion
 
 #pragma region Public Methods
-    virtual void AddSubscription(const IMessageTopic) = 0;
+    virtual void AddSubscription(const IMessageTopic&) = 0;
 
-    virtual void RemoveSubscription(const IMessageTopic) = 0;
+    virtual void RemoveSubscription(const IMessageTopic&) = 0;
 
-    virtual bool HasSubscription(const IMessageTopic) const = 0;
+    virtual bool HasSubscription(const IMessageTopic&) const = 0;
 
     virtual const std::vector<const IMessageTopic> GetSubscriptions(void) const = 0;
 #pragma endregion
