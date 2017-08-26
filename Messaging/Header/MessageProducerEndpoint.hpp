@@ -48,6 +48,7 @@ public:
 #pragma region Public Virtual Methods
     // PURE VIRTUAL METHODS
     // VIRTUAL METHODS
+    virtual void PublishMessage(const std::shared_ptr<const IMessage> message) override;
 #pragma endregion
 
 #pragma region Public Non-virtual Methods

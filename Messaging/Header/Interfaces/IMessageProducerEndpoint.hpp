@@ -26,5 +26,6 @@ public:
 #pragma endregion
 
 #pragma region Public Methods
+    virtual void PublishMessage(const std::shared_ptr<const IMessage> message) = 0;
 #pragma endregion
 };
