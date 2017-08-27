@@ -8,7 +8,7 @@
 #pragma endregion
 
 #pragma region Forward Declarations
-class IMessagingConsumerEndpoint;
+class IMessageConsumerEndpoint;
 #pragma endregion
 
 #pragma region Type Definitions
@@ -26,6 +26,6 @@ public:
 #pragma endregion
 
 #pragma region Public Methods
-    virtual void SetMessagingEndpoint(const std::shared_ptr<IMessagingConsumerEndpoint> endpoint) = 0;
+    virtual void SetMessagingEndpoint(const std::shared_ptr<IMessageConsumerEndpoint> endpoint) = 0;
 #pragma endregion
 };
