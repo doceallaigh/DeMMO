@@ -3,10 +3,13 @@
 #pragma endregion
 
 #pragma region Local Includes
-#include "../Header/MessageBus.hpp"
 #include "../Header/Interfaces/IMessage.hpp"
+#include "../Header/Interfaces/IMessageConsumer.hpp"
 #include "../Header/Interfaces/IMessageProducerEndpoint.hpp"
 #include "../Header/Interfaces/ISubscriptionCache.hpp"
+#include "../Header/MessageBus.hpp"
+#include "../Header/MessageQueueFactory.hpp"
+#include "../Header/SubscriptionCache.hpp"
 #pragma endregion
 
 #pragma region Constants
@@ -45,7 +48,13 @@ void MessageBus::PublishMessage(const std::shared_ptr<const IMessage> message)
 
 void MessageBus::AddConsumer(std::shared_ptr<IMessageConsumer> consumer)
 {
-    // TODO
+    // TODO Take this in instead of constructing it on the fly
+    MessageQueueFactory messageQueueFactory = MessageQueueFactory();
+
+    messageQueueId_t queueId = messageQueueFactory.GenerateMessageQueueId();
+    consumer->SetMessagingEndpoint(messageQueueFactory.GenerateConsumerEndpoint(queueId));
+    this->queueMap[queueId] = messageQueueFactory.GenerateProducerEndpoint(queueId);
+    this->subscriptionCacheMap[queueId] = std::make_shared<SubscriptionCache>();
 }
 #pragma endregion
 
