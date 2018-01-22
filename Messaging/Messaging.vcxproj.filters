@@ -67,12 +67,6 @@
     <ClInclude Include="Header\MessageTopic.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Interfaces\ISubscriptionCache.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\SubscriptionCache.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Header\MessageQueueFactory.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -85,12 +79,18 @@
     <ClInclude Include="Header\Interfaces\IMessageQueueIdFactory.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Header\SubscriptionCache.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\MessageQueueFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\MessageBus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SubscriptionCache.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

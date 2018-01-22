@@ -155,10 +155,6 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="Header\Interfaces\ISubscriptionCache.hpp">
-      <SubType>
-      </SubType>
-    </ClInclude>
     <ClInclude Include="Header\Message.hpp">
       <SubType>
       </SubType>
@@ -206,6 +202,10 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="Source\MessageQueueFactory.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="Source\SubscriptionCache.cpp">
       <SubType>
       </SubType>
     </ClCompile>
