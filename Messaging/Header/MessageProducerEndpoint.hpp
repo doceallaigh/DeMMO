@@ -1,107 +1,87 @@
-/* MessageProducerEndpoint.hpp
- * Class description:
- *     <MessageProducerEndpoint description goes here>
- * * */
-
 #pragma once
 
-// INCLUDES
 #pragma region Library Includes
+#include <memory>
 #pragma endregion
 
 #pragma region Local Includes
-#include "Interfaces/IMessageProducerEndpoint.hpp"
 #pragma endregion
 
-class IMessageConsumerEndpoint;
+#pragma region Forward Declarations
+class Message;
+#pragma endregion
 
-#ifndef MessageProducerEndpoint_hpp
-#define MessageProducerEndpoint_hpp
-class MessageProducerEndpoint : public virtual IMessageProducerEndpoint
+#pragma region Type Definitions
+#pragma endregion
+
+/*! \brief <Brief description goes here>
+ * 
+ * <Detailed description goes here>
+ * */
+class MessageProducerEndpoint 
 {
-public:
-#pragma region Public Constructors & Destructor
-    // DEFAULT CONSTRUCTOR
-    // MessageProducerEndpoint (void);
-
-    // COPY CONSTRUCTOR
-    // MessageProducerEndpoint (const MessageProducerEndpoint &original);
-
-    // MOVE CONSTRUCTOR
-    // MessageProducerEndpoint (const MessageProducerEndpoint &&original) noexcept;
-
-    // CUSTOM CONSTRUCTORS
-    MessageProducerEndpoint(const std::shared_ptr<IMessageConsumerEndpoint> consumerEndpoint);
-
-    // DESTRUCTOR
-    // ~MessageProducerEndpoint (void) noexcept;
+#pragma region Class Assertions
 #pragma endregion
 
+public:
 #pragma region Operators
-    // COPY ASSIGNEMENT OPERATOR
+    //! \cond \brief Copy assignment operator \endcond
     // MessageProducerEndpoint& operator= (const MessageProducerEndpoint &original);
 
-    // MOVE ASSIGNEMENT OPERATOR
+    //! \cond \brief Move assignment operator \endcond
     // MessageProducerEndpoint& operator= (MessageProducerEndpoint &&original) noexcept;
 #pragma endregion
 
-#pragma region Public Virtual Methods
-    // PURE VIRTUAL METHODS
-    // VIRTUAL METHODS
-    virtual void PublishMessage(const std::shared_ptr<const IMessage> message) override;
+#pragma region Custom Constructors
+    /*! \cond \brief <Brief description goes here> \endcond
+    *
+    * \cond \param[in] <Parameter description goes here> \endcond
+    * */
+    // MessageProducerEndpoint (T ... args);
 #pragma endregion
 
-#pragma region Public Non-virtual Methods
-    // NON-VOID METHODS
-    // VOID METHODS
-#pragma endregion
+#pragma region Standard Constructors & Destructor
+    //! \brief Default Constructor
+    MessageProducerEndpoint(void) = default;
 
-#pragma region Public Fields
-    // SERVICES
-    // COLLECTIONS
-    // OBJECTS
-    // PRIMITIVES
-#pragma endregion
+    //! \brief Copy Constructor
+    MessageProducerEndpoint(const MessageProducerEndpoint &original) = default;
 
-protected:
-#pragma region Protected Virtual Methods
-    // PURE VIRTUAL METHODS
-    // VIRTUAL METHODS
-#pragma endregion
+    //! \brief Move Constructor
+    // MessageProducerEndpoint(const MessageProducerEndpoint &&original) noexcept = default;
 
-#pragma region Protected Non-virtual Methods
-    // NON-VOID METHODS
-    // VOID METHODS
-#pragma endregion
-
-#pragma region Protected Fields
-    // SERVICES
-    // COLLECTIONS
-    // OBJECTS
-    // PRIMITIVES
+    //! \brief Destructor
+    virtual ~MessageProducerEndpoint(void) noexcept = default;
 #pragma endregion
 
 private:
 #pragma region Private Constructors
-    // DEFAULT CONSTRUCTOR
-    // MessageProducerEndpoint (void);
+    //! \cond \brief Private Default Constructor \endcond
+    // MessageProducerEndpoint(void) = default;
 #pragma endregion
 
-#pragma region Private Virtual Methods
-    // PURE VIRTUAL METHODS
-    // VIRTUAL METHODS
+public:
+#pragma region Public Methods
+	void PublishMessage(const std::shared_ptr<const Message> message);
 #pragma endregion
 
-#pragma region Private Non-virtual Methods
-    // NON-VOID METHODS
-    // VOID METHODS
+protected:
+#pragma region Protected Methods
 #pragma endregion
 
+private:
+#pragma region Private Methods
+#pragma endregion
+
+public:
+#pragma region Public Fields
+#pragma endregion
+
+protected:
+#pragma region Protected Fields
+#pragma endregion
+
+private:
 #pragma region Private Fields
-    // SERVICES
-    // COLLECTIONS
-    // OBJECTS
-    // PRIMITIVES
 #pragma endregion
 };
-#endif // !MessageProducerEndpoint_hpp

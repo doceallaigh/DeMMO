@@ -111,50 +111,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Header\Interfaces\IMessage.hpp">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="Header\Interfaces\IMessageBus.hpp">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="Header\Interfaces\IMessageConsumer.hpp">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="Header\Interfaces\IMessageConsumerEndpoint.hpp">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="Header\Interfaces\IMessageDependency.hpp">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="Header\Interfaces\IMessageConsumerEndpointFactory.hpp">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="Header\Interfaces\IMessageProducer.hpp">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="Header\Interfaces\IMessageProducerEndpoint.hpp">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="Header\Interfaces\IMessageProducerEndpointFactory.hpp">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="Header\Interfaces\IMessageQueueIdFactory.hpp">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="Header\Interfaces\IMessageTopic.hpp">
-      <SubType>
-      </SubType>
-    </ClInclude>
     <ClInclude Include="Header\Message.hpp">
       <SubType>
       </SubType>
@@ -171,7 +127,7 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="Header\MessageDependency.hpp">
+    <ClInclude Include="Header\MessageProducerEndpoint.hpp">
       <SubType>
       </SubType>
     </ClInclude>
@@ -180,10 +136,6 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="Header\MessageProducer.hpp">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="Header\MessageProducerEndpoint.hpp">
       <SubType>
       </SubType>
     </ClInclude>
@@ -198,10 +150,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\MessageBus.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="Source\MessageQueueFactory.cpp">
       <SubType>
       </SubType>
     </ClCompile>

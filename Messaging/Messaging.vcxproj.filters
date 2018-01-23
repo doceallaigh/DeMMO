@@ -19,34 +19,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header\Interfaces\IMessageBus.hpp">
+    <ClInclude Include="Header\MessageProducer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Header\MessageBus.hpp">
+    <ClInclude Include="Header\MessageTopic.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Interfaces\IMessage.hpp">
+    <ClInclude Include="Header\MessageQueueFactory.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Interfaces\IMessageTopic.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Interfaces\IMessageConsumer.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Interfaces\IMessageProducer.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Interfaces\IMessageConsumerEndpoint.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Interfaces\IMessageProducerEndpoint.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Interfaces\IMessageDependency.hpp">
+    <ClInclude Include="Header\SubscriptionCache.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Header\Message.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MessageBus.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Header\MessageConsumer.hpp">
@@ -58,35 +46,8 @@
     <ClInclude Include="Header\MessageProducerEndpoint.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Header\MessageProducer.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MessageDependency.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MessageTopic.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MessageQueueFactory.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Interfaces\IMessageConsumerEndpointFactory.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Interfaces\IMessageProducerEndpointFactory.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Interfaces\IMessageQueueIdFactory.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\SubscriptionCache.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\MessageQueueFactory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source\MessageBus.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

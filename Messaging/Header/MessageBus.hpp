@@ -1,115 +1,90 @@
-/* MessageBus.hpp
- * Class description:
- *     This class acts as the basic implementation of the IMessageBus interface.
- *     For more information on the contract described by this interface, see IMessageBus.hpp
- * * */
-
 #pragma once
 
-// INCLUDES
 #pragma region Library Includes
-#include <unordered_map>
 #pragma endregion
 
 #pragma region Local Includes
-#include "Interfaces/IMessageBus.hpp"
 #pragma endregion
 
-class ISubscriptionCache;
-class IMessageProducerEndpoint;
-typedef unsigned long messageQueueId_t;
+#pragma region Forward Declarations
+class Message;
+class MessageConsumer;
+#pragma endregion
 
-#ifndef MessageBus_hpp
-#define MessageBus_hpp
-class MessageBus : public virtual IMessageBus
+#pragma region Type Definitions
+#pragma endregion
+
+/*! \brief Defines a contract which allows messages to be published and routed to subscribing modules
+*
+* \remarks Promise(s)
+*     1. Messages sent to this module are routed to all modules subscribing to that message's topic
+* */
+class MessageBus 
 {
-public:
-#pragma region Public Constructors & Destructor
-    // DEFAULT CONSTRUCTOR
-    // MessageBus (void);
-
-    // COPY CONSTRUCTOR
-    // MessageBus (const MessageBus &original);
-
-    // CUSTOM CONSTRUCTORS
-    MessageBus(std::unordered_map<const messageQueueId_t, std::shared_ptr<ISubscriptionCache>> subscriptionCacheMap);
-
-    // MOVE CONSTRUCTOR
-    // MessageBus (const MessageBus &&original) noexcept;
-
-    // DESTRUCTOR
-    // ~MessageBus (void) noexcept;
+#pragma region Class Assertions
 #pragma endregion
 
+public:
 #pragma region Operators
-    // COPY ASSIGNEMENT OPERATOR
+    //! \cond \brief Copy assignment operator \endcond
     // MessageBus& operator= (const MessageBus &original);
 
-    // MOVE ASSIGNEMENT OPERATOR
+    //! \cond \brief Move assignment operator \endcond
     // MessageBus& operator= (MessageBus &&original) noexcept;
 #pragma endregion
 
-#pragma region Public Virtual Methods
-    // PURE VIRTUAL METHODS
-    // VIRTUAL METHODS
-    virtual void PublishMessage(const std::shared_ptr<const IMessage> message) override;
-
-    virtual void AddConsumer(std::shared_ptr<IMessageConsumer> consumer) override;
+#pragma region Custom Constructors
+    /*! \cond \brief <Brief description goes here> \endcond
+    *
+    * \cond \param[in] <Parameter description goes here> \endcond
+    * */
+    // MessageBus (T ... args);
 #pragma endregion
 
-#pragma region Public Non-virtual Methods
-    // NON-VOID METHODS
-    // VOID METHODS
-#pragma endregion
+#pragma region Standard Constructors & Destructor
+    //! \brief Default Constructor
+    MessageBus(void) = default;
 
-#pragma region Public Fields
-    // SERVICES
-    // COLLECTIONS
-    // OBJECTS
-    // PRIMITIVES
-#pragma endregion
+    //! \brief Copy Constructor
+    MessageBus(const MessageBus &original) = default;
 
-protected:
-#pragma region Protected Virtual Methods
-    // PURE VIRTUAL METHODS
-    // VIRTUAL METHODS
-#pragma endregion
+    //! \brief Move Constructor
+    // MessageBus(const MessageBus &&original) noexcept = default;
 
-#pragma region Protected Non-virtual Methods
-    // NON-VOID METHODS
-    // VOID METHODS
-#pragma endregion
-
-#pragma region Protected Fields
-    // SERVICES
-    // COLLECTIONS
-    // OBJECTS
-    // PRIMITIVES
+    //! \brief Destructor
+    virtual ~MessageBus(void) noexcept = default;
 #pragma endregion
 
 private:
 #pragma region Private Constructors
-    // DEFAULT CONSTRUCTOR
-    // MessageBus (void);
+    //! \cond \brief Private Default Constructor \endcond
+    // MessageBus(void) = default;
 #pragma endregion
 
-#pragma region Private Virtual Methods
-    // PURE VIRTUAL METHODS
-    // VIRTUAL METHODS
+public:
+#pragma region Public Methods
+	void PublishMessage(const std::shared_ptr<const Message> message);
+
+	void AddConsumer(std::shared_ptr<MessageConsumer> consumer);
 #pragma endregion
 
-#pragma region Private Non-virtual Methods
-    // NON-VOID METHODS
-    // VOID METHODS
+protected:
+#pragma region Protected Methods
 #pragma endregion
 
+private:
+#pragma region Private Methods
+#pragma endregion
+
+public:
+#pragma region Public Fields
+#pragma endregion
+
+protected:
+#pragma region Protected Fields
+#pragma endregion
+
+private:
 #pragma region Private Fields
-    // SERVICES
-    std::unordered_map<const messageQueueId_t, std::shared_ptr<ISubscriptionCache>> subscriptionCacheMap;
-    // COLLECTIONS
-    std::unordered_map<const messageQueueId_t, std::shared_ptr<IMessageProducerEndpoint>> queueMap;
-    // OBJECTS
-    // PRIMITIVES
 #pragma endregion
 };
-#endif // !MessageBus_hpp

@@ -1,102 +1,82 @@
-/* MessageConsumer.hpp
- * Class description:
- *     <MessageConsumer description goes here>
- * * */
-
 #pragma once
 
-// INCLUDES
 #pragma region Library Includes
 #pragma endregion
 
 #pragma region Local Includes
-#include "Interfaces/IMessageConsumer.hpp"
 #pragma endregion
 
-#ifndef MessageConsumer_hpp
-#define MessageConsumer_hpp
-class MessageConsumer : public virtual IMessageConsumer
+#pragma region Forward Declarations
+#pragma endregion
+
+#pragma region Type Definitions
+#pragma endregion
+
+/*! \brief An API to allow association with a consumer-side messaging endpoint
+* */
+class MessageConsumer 
 {
-public:
-#pragma region Public Constructors & Destructor
-    // DEFAULT CONSTRUCTOR
-    // MessageConsumer (void);
-
-    // COPY CONSTRUCTOR
-    // MessageConsumer (const MessageConsumer &original);
-
-    // MOVE CONSTRUCTOR
-    // MessageConsumer (const MessageConsumer &&original) noexcept;
-
-    // DESTRUCTOR
-    // ~MessageConsumer (void) noexcept;
+#pragma region Class Assertions
 #pragma endregion
 
+public:
 #pragma region Operators
-    // COPY ASSIGNEMENT OPERATOR
+    //! \cond \brief Copy assignment operator \endcond
     // MessageConsumer& operator= (const MessageConsumer &original);
 
-    // MOVE ASSIGNEMENT OPERATOR
+    //! \cond \brief Move assignment operator \endcond
     // MessageConsumer& operator= (MessageConsumer &&original) noexcept;
 #pragma endregion
 
-#pragma region Public Virtual Methods
-    // PURE VIRTUAL METHODS
-    // VIRTUAL METHODS
-    virtual void SetMessagingEndpoint(const std::shared_ptr<IMessagingConsumerEndpoint> endpoint) override;
+#pragma region Custom Constructors
+    /*! \cond \brief <Brief description goes here> \endcond
+    *
+    * \cond \param[in] <Parameter description goes here> \endcond
+    * */
+    // MessageConsumer (T ... args);
 #pragma endregion
 
-#pragma region Public Non-virtual Methods
-    // NON-VOID METHODS
-    // VOID METHODS
-#pragma endregion
+#pragma region Standard Constructors & Destructor
+    //! \brief Default Constructor
+    MessageConsumer(void) = default;
 
-#pragma region Public Fields
-    // SERVICES
-    // COLLECTIONS
-    // OBJECTS
-    // PRIMITIVES
-#pragma endregion
+    //! \brief Copy Constructor
+    MessageConsumer(const MessageConsumer &original) = default;
 
-protected:
-#pragma region Protected Virtual Methods
-    // PURE VIRTUAL METHODS
-    // VIRTUAL METHODS
-#pragma endregion
+    //! \brief Move Constructor
+    // MessageConsumer(const MessageConsumer &&original) noexcept = default;
 
-#pragma region Protected Non-virtual Methods
-    // NON-VOID METHODS
-    // VOID METHODS
-#pragma endregion
-
-#pragma region Protected Fields
-    // SERVICES
-    // COLLECTIONS
-    // OBJECTS
-    // PRIMITIVES
+    //! \brief Destructor
+    virtual ~MessageConsumer(void) noexcept = default;
 #pragma endregion
 
 private:
 #pragma region Private Constructors
-    // DEFAULT CONSTRUCTOR
-    // MessageConsumer (void);
+    //! \cond \brief Private Default Constructor \endcond
+    // MessageConsumer(void) = default;
 #pragma endregion
 
-#pragma region Private Virtual Methods
-    // PURE VIRTUAL METHODS
-    // VIRTUAL METHODS
+public:
+#pragma region Public Methods
 #pragma endregion
 
-#pragma region Private Non-virtual Methods
-    // NON-VOID METHODS
-    // VOID METHODS
+protected:
+#pragma region Protected Methods
 #pragma endregion
 
+private:
+#pragma region Private Methods
+#pragma endregion
+
+public:
+#pragma region Public Fields
+#pragma endregion
+
+protected:
+#pragma region Protected Fields
+#pragma endregion
+
+private:
 #pragma region Private Fields
-    // SERVICES
-    // COLLECTIONS
-    // OBJECTS
-    // PRIMITIVES
 #pragma endregion
 };
-#endif // !MessageConsumer_hpp

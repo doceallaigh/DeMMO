@@ -1,103 +1,88 @@
-/* MessageConsumerEndpoint.hpp
- * Class description:
- *     This class acts as the basic implementation of the IMessageConsumerEndpoint interface.
- *     For more information on the contract described by this interface, see IMessageConsumerEndpoint.hpp
- * * */
-
 #pragma once
 
-// INCLUDES
 #pragma region Library Includes
+#include <memory>
 #pragma endregion
 
 #pragma region Local Includes
-#include "Interfaces/IMessageConsumerEndpoint.hpp"
 #pragma endregion
 
-#ifndef MessageConsumerEndpoint_hpp
-#define MessageConsumerEndpoint_hpp
-class MessageConsumerEndpoint : public virtual IMessageConsumerEndpoint
+#pragma region Forward Declarations
+class Message;
+#pragma endregion
+
+#pragma region Type Definitions
+#pragma endregion
+
+/*! \brief Serves to obfuscate the production end of the MessageQueue from the message consumer
+*
+* \remarks Allows the consumer to:
+*     1. Lazily retrieve Messages from the queue/producer
+* */
+class MessageConsumerEndpoint 
 {
-public:
-#pragma region Public Constructors & Destructor
-    // DEFAULT CONSTRUCTOR
-    // MessageConsumerEndpoint (void);
-
-    // COPY CONSTRUCTOR
-    // MessageConsumerEndpoint (const MessageConsumerEndpoint &original);
-
-    // MOVE CONSTRUCTOR
-    // MessageConsumerEndpoint (const MessageConsumerEndpoint &&original) noexcept;
-
-    // DESTRUCTOR
-    // ~MessageConsumerEndpoint (void) noexcept;
+#pragma region Class Assertions
 #pragma endregion
 
+public:
 #pragma region Operators
-    // COPY ASSIGNEMENT OPERATOR
+    //! \cond \brief Copy assignment operator \endcond
     // MessageConsumerEndpoint& operator= (const MessageConsumerEndpoint &original);
 
-    // MOVE ASSIGNEMENT OPERATOR
+    //! \cond \brief Move assignment operator \endcond
     // MessageConsumerEndpoint& operator= (MessageConsumerEndpoint &&original) noexcept;
 #pragma endregion
 
-#pragma region Public Virtual Methods
-    // PURE VIRTUAL METHODS
-    // VIRTUAL METHODS
-    virtual const std::shared_ptr<const IMessage> ReceiveMessage (void) override;
+#pragma region Custom Constructors
+    /*! \cond \brief <Brief description goes here> \endcond
+    *
+    * \cond \param[in] <Parameter description goes here> \endcond
+    * */
+    // MessageConsumerEndpoint (T ... args);
 #pragma endregion
 
-#pragma region Public Non-virtual Methods
-    // NON-VOID METHODS
-    // VOID METHODS
-#pragma endregion
+#pragma region Standard Constructors & Destructor
+    //! \brief Default Constructor
+    MessageConsumerEndpoint(void) = default;
 
-#pragma region Public Fields
-    // SERVICES
-    // COLLECTIONS
-    // OBJECTS
-    // PRIMITIVES
-#pragma endregion
+    //! \brief Copy Constructor
+    MessageConsumerEndpoint(const MessageConsumerEndpoint &original) = default;
 
-protected:
-#pragma region Protected Virtual Methods
-    // PURE VIRTUAL METHODS
-    // VIRTUAL METHODS
-#pragma endregion
+    //! \brief Move Constructor
+    // MessageConsumerEndpoint(const MessageConsumerEndpoint &&original) noexcept = default;
 
-#pragma region Protected Non-virtual Methods
-    // NON-VOID METHODS
-    // VOID METHODS
-#pragma endregion
-
-#pragma region Protected Fields
-    // SERVICES
-    // COLLECTIONS
-    // OBJECTS
-    // PRIMITIVES
+    //! \brief Destructor
+    virtual ~MessageConsumerEndpoint(void) noexcept = default;
 #pragma endregion
 
 private:
 #pragma region Private Constructors
-    // DEFAULT CONSTRUCTOR
-    // MessageConsumerEndpoint (void);
+    //! \cond \brief Private Default Constructor \endcond
+    // MessageConsumerEndpoint(void) = default;
 #pragma endregion
 
-#pragma region Private Virtual Methods
-    // PURE VIRTUAL METHODS
-    // VIRTUAL METHODS
+public:
+#pragma region Public Methods
+	const std::shared_ptr<const Message> ReceiveMessage(void);
 #pragma endregion
 
-#pragma region Private Non-virtual Methods
-    // NON-VOID METHODS
-    // VOID METHODS
+protected:
+#pragma region Protected Methods
 #pragma endregion
 
+private:
+#pragma region Private Methods
+#pragma endregion
+
+public:
+#pragma region Public Fields
+#pragma endregion
+
+protected:
+#pragma region Protected Fields
+#pragma endregion
+
+private:
 #pragma region Private Fields
-    // SERVICES
-    // COLLECTIONS
-    // OBJECTS
-    // PRIMITIVES
 #pragma endregion
 };
-#endif // !MessageConsumerEndpoint_hpp

@@ -3,12 +3,11 @@
 #pragma endregion
 
 #pragma region Local Includes
-#include "../Header/Interfaces/IMessage.hpp"
-#include "../Header/Interfaces/IMessageConsumer.hpp"
-#include "../Header/Interfaces/IMessageProducerEndpoint.hpp"
-#include "../Header/Interfaces/ISubscriptionCache.hpp"
+#include "../Header/Message.hpp"
+#include "../Header/MessageConsumer.hpp"
+#include "../Header/MessageProducerEndpoint.hpp"
+#include "../Header/SubscriptionCache.hpp"
 #include "../Header/MessageBus.hpp"
-#include "../Header/MessageQueueFactory.hpp"
 #include "../Header/SubscriptionCache.hpp"
 #pragma endregion
 

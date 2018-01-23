@@ -1,105 +1,93 @@
-/* Message.hpp
- * Class description:
- *     This class acts as the basic implementation of the IMessage interface.
- *     For more information on the contract described by this interface, see IMessage.hpp
- * * */
-
 #pragma once
 
-// INCLUDES
 #pragma region Library Includes
+#include <string>
+#include <memory>
 #pragma endregion
 
 #pragma region Local Includes
-#include "Interfaces/IMessage.hpp"
 #pragma endregion
 
-#ifndef Message_hpp
-#define Message_hpp
-const class Message : public virtual IMessage
+#pragma region Forward Declarations
+#pragma endregion
+
+#pragma region Type Definitions
+typedef unsigned long messageId_t;
+#pragma endregion
+
+/*! \brief Describes the basic unit by which modules trigger work for each other
+*
+* \remarks Promise(s):
+*     1. The implementation provides access to an unchanging topic, which allows it to be used by the MessageBus to route it to its destination(s)
+*     2. The implementation provides access to an unchanging identifier.  This identifier is presumed to be unique, but this is not programatically enforced.
+* */
+class Message 
 {
-public:
-#pragma region Public Constructors & Destructor
-    // DEFAULT CONSTRUCTOR
-    // Message (void);
-
-    // COPY CONSTRUCTOR
-    // Message (const Message &original);
-
-    // MOVE CONSTRUCTOR
-    // Message (const Message &&original) noexcept;
-
-    // DESTRUCTOR
-    // ~Message (void) noexcept;
+#pragma region Class Assertions
 #pragma endregion
 
+public:
 #pragma region Operators
-    // COPY ASSIGNEMENT OPERATOR
+    //! \cond \brief Copy assignment operator \endcond
     // Message& operator= (const Message &original);
 
-    // MOVE ASSIGNEMENT OPERATOR
+    //! \cond \brief Move assignment operator \endcond
     // Message& operator= (Message &&original) noexcept;
 #pragma endregion
 
-#pragma region Public Virtual Methods
-    // PURE VIRTUAL METHODS
-    // VIRTUAL METHODS
-    virtual const std::shared_ptr<const IMessageTopic> GetTopic (void) const override;
-
-    virtual const messageId_t GetId (void) const override;
+#pragma region Custom Constructors
+    /*! \cond \brief <Brief description goes here> \endcond
+    *
+    * \cond \param[in] <Parameter description goes here> \endcond
+    * */
+    // Message (T ... args);
 #pragma endregion
 
-#pragma region Public Non-virtual Methods
-    // NON-VOID METHODS
-    // VOID METHODS
-#pragma endregion
+#pragma region Standard Constructors & Destructor
+    //! \brief Default Constructor
+    Message(void) = default;
 
-#pragma region Public Fields
-    // SERVICES
-    // COLLECTIONS
-    // OBJECTS
-    // PRIMITIVES
-#pragma endregion
+    //! \brief Copy Constructor
+    Message(const Message &original) = default;
 
-protected:
-#pragma region Protected Virtual Methods
-    // PURE VIRTUAL METHODS
-    // VIRTUAL METHODS
-#pragma endregion
+    //! \brief Move Constructor
+    // Message(const Message &&original) noexcept = default;
 
-#pragma region Protected Non-virtual Methods
-    // NON-VOID METHODS
-    // VOID METHODS
-#pragma endregion
-
-#pragma region Protected Fields
-    // SERVICES
-    // COLLECTIONS
-    // OBJECTS
-    // PRIMITIVES
+    //! \brief Destructor
+    virtual ~Message(void) noexcept = default;
 #pragma endregion
 
 private:
 #pragma region Private Constructors
-    // DEFAULT CONSTRUCTOR
-    // Message (void);
+    //! \cond \brief Private Default Constructor \endcond
+    // Message(void) = default;
 #pragma endregion
 
-#pragma region Private Virtual Methods
-    // PURE VIRTUAL METHODS
-    // VIRTUAL METHODS
+public:
+#pragma region Public Methods
+	// TODO Consider making this class A POD
+	const std::string GetTopic(void) const;
+
+	const messageId_t GetId(void) const;
 #pragma endregion
 
-#pragma region Private Non-virtual Methods
-    // NON-VOID METHODS
-    // VOID METHODS
+protected:
+#pragma region Protected Methods
 #pragma endregion
 
+private:
+#pragma region Private Methods
+#pragma endregion
+
+public:
+#pragma region Public Fields
+#pragma endregion
+
+protected:
+#pragma region Protected Fields
+#pragma endregion
+
+private:
 #pragma region Private Fields
-    // SERVICES
-    // COLLECTIONS
-    // OBJECTS
-    // PRIMITIVES
 #pragma endregion
 };
-#endif // !Message_hpp
