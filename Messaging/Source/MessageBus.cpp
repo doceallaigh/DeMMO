@@ -8,7 +8,6 @@
 #include "../Header/MessageProducerEndpoint.hpp"
 #include "../Header/SubscriptionCache.hpp"
 #include "../Header/MessageBus.hpp"
-#include "../Header/SubscriptionCache.hpp"
 #pragma endregion
 
 #pragma region Constants
@@ -18,10 +17,6 @@
 #pragma endregion
 
 #pragma region Custom Constructors
-MessageBus::MessageBus(std::unordered_map<const messageQueueId_t, std::shared_ptr<ISubscriptionCache>> subscriptionCacheMap)
-    : subscriptionCacheMap(subscriptionCacheMap)
-{ }
-
 #pragma endregion
 
 #pragma region Standard Constructors & Destructor
@@ -31,29 +26,14 @@ MessageBus::MessageBus(std::unordered_map<const messageQueueId_t, std::shared_pt
 #pragma endregion
 
 #pragma region Public Methods
-void MessageBus::PublishMessage(const std::shared_ptr<const IMessage> message)
+void MessageBus::PublishMessage(const std::shared_ptr<const Message> message)
 {
-    for (const auto& kvp : this->subscriptionCacheMap)
-    {
-        const messageQueueId_t& messageQueueId = kvp.first;
-        const std::shared_ptr<ISubscriptionCache>& subscriptionCache = kvp.second;
-
-        if (subscriptionCache->HasSubscription(*(message->GetTopic())))
-        {
-            this->queueMap[messageQueueId]->PublishMessage(message);
-        }
-    }
+	// TODO Implement
 }
 
-void MessageBus::AddConsumer(std::shared_ptr<IMessageConsumer> consumer)
+void MessageBus::AddConsumer(std::shared_ptr<MessageConsumer> consumer)
 {
-    // TODO Take this in instead of constructing it on the fly
-    MessageQueueFactory messageQueueFactory = MessageQueueFactory();
-
-    messageQueueId_t queueId = messageQueueFactory.GenerateMessageQueueId();
-    consumer->SetMessagingEndpoint(messageQueueFactory.GenerateConsumerEndpoint(queueId));
-    this->queueMap[queueId] = messageQueueFactory.GenerateProducerEndpoint(queueId);
-    this->subscriptionCacheMap[queueId] = std::make_shared<SubscriptionCache>();
+	// TODO Implement
 }
 #pragma endregion
 
