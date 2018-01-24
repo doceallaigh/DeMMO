@@ -62,7 +62,7 @@ public:
 #pragma region Public Methods
 	void Subscribe(const std::string topic);
 
-	std::unique_ptr<std::vector<const std::string>> GetTopics(void) const;
+	const std::unique_ptr<const std::vector<std::string>> GetTopics(void) const;
 #pragma endregion
 
 protected:
@@ -83,6 +83,6 @@ protected:
 
 private:
 #pragma region Private Fields
-	std::vector<const std::string> topics;
+	std::vector<std::string> topics;
 #pragma endregion
 };

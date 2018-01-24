@@ -8,7 +8,8 @@
 #pragma endregion
 
 #pragma region Forward Declarations
-class Message;
+template <typename TPayload>
+struct Message;
 #pragma endregion
 
 #pragma region Type Definitions
@@ -62,7 +63,11 @@ private:
 
 public:
 #pragma region Public Methods
-	void PublishMessage(const std::shared_ptr<const Message> message);
+	template <typename TPayload>
+	void PublishMessage(const std::shared_ptr<const Message<TPayload>> message)
+	{
+		// TODO Implement
+	}
 #pragma endregion
 
 protected:

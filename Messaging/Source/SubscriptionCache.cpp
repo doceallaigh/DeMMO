@@ -27,9 +27,9 @@ void SubscriptionCache::Subscribe(const std::string topic)
 	this->topics.push_back(topic);
 }
 
-std::unique_ptr<std::vector<const std::string>> SubscriptionCache::GetTopics(void) const
+const std::unique_ptr<const std::vector<std::string>> SubscriptionCache::GetTopics(void) const
 {
-	return std::make_unique<std::vector<const std::string>>(std::vector<const std::string>(this->topics));
+	return std::make_unique<std::vector<std::string>>(std::vector<std::string>(this->topics));
 }
 #pragma endregion
 

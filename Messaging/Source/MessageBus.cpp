@@ -26,11 +26,6 @@
 #pragma endregion
 
 #pragma region Public Methods
-void MessageBus::PublishMessage(const std::shared_ptr<const Message> message)
-{
-	// TODO Implement
-}
-
 void MessageBus::AddConsumer(std::shared_ptr<MessageConsumer> consumer)
 {
 	// TODO Implement
