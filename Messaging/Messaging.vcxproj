@@ -139,10 +139,6 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="Header\MessageRouter.hpp">
-      <SubType>
-      </SubType>
-    </ClInclude>
     <ClInclude Include="Header\MessageTopic.hpp">
       <SubType>
       </SubType>
@@ -155,10 +151,6 @@
   <ItemGroup>
     <ClCompile Include="Source\Main.cpp" />
     <ClCompile Include="Source\MessageBus.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="Source\MessageRouter.cpp">
       <SubType>
       </SubType>
     </ClCompile>
