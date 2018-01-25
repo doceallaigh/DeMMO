@@ -71,7 +71,7 @@ public:
 	void Register(const std::shared_ptr<MessageProducerEndpoint> endpoint, unsigned long endpointId);
 
 	template <typename TPayload>
-	void Publish(std::shared_ptr<Message<TPayload>> message);
+	void Publish(const std::shared_ptr<const Message<TPayload>> message);
 #pragma endregion
 
 protected:
