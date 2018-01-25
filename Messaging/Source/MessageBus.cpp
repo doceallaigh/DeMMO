@@ -3,11 +3,14 @@
 #pragma endregion
 
 #pragma region Local Includes
+#include "../Header/MessageBus.hpp"
 #include "../Header/Message.hpp"
 #include "../Header/MessageConsumer.hpp"
+#include "../Header/MessageConsumerEndpoint.hpp"
 #include "../Header/MessageProducerEndpoint.hpp"
+#include "../Header/MessageRouter.hpp"
 #include "../Header/SubscriptionCache.hpp"
-#include "../Header/MessageBus.hpp"
+#include "../Header/SubscriptionMap.hpp"
 #pragma endregion
 
 #pragma region Constants
@@ -28,7 +31,29 @@
 #pragma region Public Methods
 void MessageBus::AddConsumer(std::shared_ptr<MessageConsumer> consumer)
 {
-	// TODO Implement
+	// Create the pipe
+	std::shared_ptr<MessageConsumerEndpoint> consumerEndpoint = std::make_shared<MessageConsumerEndpoint>();
+	std::shared_ptr<MessageProducerEndpoint> producerEndpoint = std::make_shared<MessageProducerEndpoint>(consumerEndpoint);
+
+	// Create the shared cache
+	std::shared_ptr<SubscriptionCache> subscriptionCache = std::make_shared<SubscriptionCache>();
+
+	// Create a message containing the cache to share
+	Message<SubscriptionCache> subscriptionCacheMessage = Message<SubscriptionCache>();
+	subscriptionCacheMessage.Topic = "ConsumerInitialization";
+	// TODO Replace 1U with properly generated entity ID
+	subscriptionCacheMessage.Id = 1U;
+	subscriptionCacheMessage.Payload = subscriptionCache;
+
+	// TODO Replace 2U with properly generated entity ID
+	unsigned long endpointId = 2U;
+
+	// Set up the router with the shared cache
+	this->subscriptionMap->TrackSubscriptions(subscriptionCache, endpointId);
+	this->messageRouter->Register(producerEndpoint, endpointId);
+
+	// Send the cache to the consumer
+	producerEndpoint->PublishMessage(std::make_shared<const Message<SubscriptionCache>>(subscriptionCacheMessage));
 }
 #pragma endregion
 

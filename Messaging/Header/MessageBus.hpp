@@ -1,6 +1,7 @@
 #pragma once
 
 #pragma region Library Includes
+#include <memory>
 #pragma endregion
 
 #pragma region Local Includes
@@ -11,6 +12,8 @@ template <typename TPayload>
 struct Message;
 
 class MessageConsumer;
+class MessageRouter;
+class SubscriptionMap;
 #pragma endregion
 
 #pragma region Type Definitions
@@ -65,13 +68,10 @@ private:
 
 public:
 #pragma region Public Methods
-	template <typename TPayload>
-	void PublishMessage(const std::shared_ptr<const Message<TPayload>> message) const
-	{
-		// TODO Implement
-	}
-
 	void AddConsumer(std::shared_ptr<MessageConsumer> consumer);
+
+	template <typename TPayload>
+	void PublishMessage(const std::shared_ptr<const Message<TPayload>> message) const;
 #pragma endregion
 
 protected:
@@ -92,5 +92,7 @@ protected:
 
 private:
 #pragma region Private Fields
+	std::unique_ptr<MessageRouter> messageRouter;
+	std::unique_ptr<SubscriptionMap> subscriptionMap;
 #pragma endregion
 };
