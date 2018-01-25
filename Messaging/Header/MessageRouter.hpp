@@ -1,13 +1,19 @@
 #pragma once
 
 #pragma region Library Includes
+#include <memory>
+#include <unordered_map>
 #pragma endregion
 
 #pragma region Local Includes
 #pragma endregion
 
 #pragma region Forward Declarations
+template <typename TPayload>
+struct Message;
+
 class MessageProducerEndpoint;
+class SubscriptionMap;
 #pragma endregion
 
 #pragma region Type Definitions
@@ -32,16 +38,16 @@ public:
 #pragma endregion
 
 #pragma region Custom Constructors
-    /*! \cond \brief <Brief description goes here> \endcond
+    /*! \brief SubscriptionMap Parameterized Constructor
     *
-    * \cond \param[in] <Parameter description goes here> \endcond
+    * \param[in] subscriptionMap An object representing a mapping of topics to subscribing endpoint identifiers
     * */
-    // MessageRouter (T ... args);
+    MessageRouter (std::unique_ptr<SubscriptionMap> &&subscriptionMap);
 #pragma endregion
 
 #pragma region Standard Constructors & Destructor
-    //! \brief Default Constructor
-    MessageRouter(void) = default;
+    //! \cond \brief Default Constructor \endcond
+    // MessageRouter(void) = default;
 
     //! \brief Copy Constructor
     MessageRouter(const MessageRouter &original) = default;
@@ -55,13 +61,17 @@ public:
 
 private:
 #pragma region Private Constructors
-    //! \cond \brief Private Default Constructor \endcond
-    // MessageRouter(void) = default;
+    //! \brief Private Default Constructor
+    MessageRouter(void) = default;
 #pragma endregion
 
 public:
 #pragma region Public Methods
-	void Register(MessageProducerEndpoint endpoint);
+	// TODO Replace with entityId_t when added
+	void Register(const std::shared_ptr<MessageProducerEndpoint> endpoint, unsigned long endpointId);
+
+	template <typename TPayload>
+	void Publish(std::shared_ptr<Message<TPayload>> message);
 #pragma endregion
 
 protected:
@@ -82,5 +92,10 @@ protected:
 
 private:
 #pragma region Private Fields
+	// TODO Replace with entityId_t when added
+	std::unordered_map<unsigned long, std::shared_ptr<MessageProducerEndpoint>> endpointMap;
+	std::unique_ptr<SubscriptionMap> subscriptionMap;
 #pragma endregion
 };
+
+#include "../Template/MessageRouter.tpp"
