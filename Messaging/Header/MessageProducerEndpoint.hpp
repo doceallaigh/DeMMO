@@ -10,6 +10,8 @@
 #pragma region Forward Declarations
 template <typename TPayload>
 struct Message;
+
+class MessageConsumerEndpoint;
 #pragma endregion
 
 #pragma region Type Definitions
@@ -34,16 +36,16 @@ public:
 #pragma endregion
 
 #pragma region Custom Constructors
-    /*! \cond \brief <Brief description goes here> \endcond
+    /*! Consumer Endpoint Parameterized Constructor
     *
-    * \cond \param[in] <Parameter description goes here> \endcond
+    * \param[in] consumerEndpoint The opposing messaging endpoint shared by the consumer which this class serves to obfuscate
     * */
-    // MessageProducerEndpoint (T ... args);
+    MessageProducerEndpoint (std::shared_ptr<MessageConsumerEndpoint> consumerEndpoint);
 #pragma endregion
 
 #pragma region Standard Constructors & Destructor
-    //! \brief Default Constructor
-    MessageProducerEndpoint(void) = default;
+    //! \cond \brief Default Constructor \endcond
+    // MessageProducerEndpoint(void) = default;
 
     //! \brief Copy Constructor
     MessageProducerEndpoint(const MessageProducerEndpoint &original) = default;
@@ -57,17 +59,14 @@ public:
 
 private:
 #pragma region Private Constructors
-    //! \cond \brief Private Default Constructor \endcond
-    // MessageProducerEndpoint(void) = default;
+    //! \brief Private Default Constructor
+    MessageProducerEndpoint(void) = default;
 #pragma endregion
 
 public:
 #pragma region Public Methods
 	template <typename TPayload>
-	void PublishMessage(const std::shared_ptr<const Message<TPayload>> message)
-	{
-		// TODO Implement
-	}
+	void PublishMessage(const std::shared_ptr<const Message<TPayload>> message);
 #pragma endregion
 
 protected:
@@ -88,5 +87,6 @@ protected:
 
 private:
 #pragma region Private Fields
+
 #pragma endregion
 };
