@@ -87,6 +87,8 @@ protected:
 
 private:
 #pragma region Private Fields
-
+	std::shared_ptr<MessageConsumerEndpoint> consumerEndpoint;
 #pragma endregion
 };
+
+#include "../Template/MessageProducerEndpoint.tpp"

@@ -162,6 +162,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="Source\MessageProducerEndpoint.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="Source\MessageRouter.cpp">
       <SubType>
       </SubType>
@@ -176,6 +180,15 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Template\MessageBus.tpp">
+      <FileType>CppCode</FileType>
+    </None>
+    <None Include="Template\MessageConsumerEndpoint.tpp">
+      <FileType>CppCode</FileType>
+    </None>
+    <None Include="Template\MessageProducerEndpoint.tpp">
+      <FileType>CppCode</FileType>
+    </None>
     <None Include="Template\MessageRouter.tpp">
       <FileType>CppCode</FileType>
     </None>

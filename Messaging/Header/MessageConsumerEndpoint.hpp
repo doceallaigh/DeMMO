@@ -88,3 +88,5 @@ private:
 #pragma region Private Fields
 #pragma endregion
 };
+
+#include "../Template/MessageConsumerEndpoint.tpp"

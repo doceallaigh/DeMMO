@@ -39,16 +39,17 @@ public:
 #pragma endregion
 
 #pragma region Custom Constructors
-    /*! \cond \brief <Brief description goes here> \endcond
+    /*! \brief Dependency Parameterized Constructor
     *
-    * \cond \param[in] <Parameter description goes here> \endcond
+    * \param[in] messageRouter An object responsible for routing messages to subscribed consumers as they come in
+    * \param[in] subscriptionMap An object responsible for tracking which consumers are subscribed to which topics
     * */
-    // MessageBus (T ... args);
+    MessageBus (std::unique_ptr<MessageRouter> &&messageRouter, std::unique_ptr<SubscriptionMap> &&subscriptionMap);
 #pragma endregion
 
 #pragma region Standard Constructors & Destructor
-    //! \brief Default Constructor
-    MessageBus(void) = default;
+    //! \cond \brief Default Constructor \endcond
+    // MessageBus(void) = default;
 
     //! \brief Copy Constructor
     MessageBus(const MessageBus &original) = default;
@@ -62,8 +63,8 @@ public:
 
 private:
 #pragma region Private Constructors
-    //! \cond \brief Private Default Constructor \endcond
-    // MessageBus(void) = default;
+    //! \brief Private Default Constructor
+    MessageBus(void) = default;
 #pragma endregion
 
 public:
@@ -96,3 +97,5 @@ private:
 	std::unique_ptr<SubscriptionMap> subscriptionMap;
 #pragma endregion
 };
+
+#include "../Template/MessageBus.tpp"

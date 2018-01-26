@@ -69,9 +69,21 @@
     <ClCompile Include="Source\SubscriptionMap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\MessageProducerEndpoint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Template\MessageRouter.tpp">
+      <Filter>Template Files</Filter>
+    </None>
+    <None Include="Template\MessageConsumerEndpoint.tpp">
+      <Filter>Template Files</Filter>
+    </None>
+    <None Include="Template\MessageProducerEndpoint.tpp">
+      <Filter>Template Files</Filter>
+    </None>
+    <None Include="Template\MessageBus.tpp">
       <Filter>Template Files</Filter>
     </None>
   </ItemGroup>
