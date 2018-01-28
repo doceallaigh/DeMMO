@@ -20,8 +20,8 @@
 #pragma endregion
 
 #pragma region Custom Constructors
-MessageBus::MessageBus(std::unique_ptr<MessageRouter> &&messageRouter, std::unique_ptr<SubscriptionMap> &&subscriptionMap) 
-	: messageRouter(std::move(messageRouter)), subscriptionMap(std::move(subscriptionMap))
+MessageBus::MessageBus(std::unique_ptr<MessageRouter> &&messageRouter, std::shared_ptr<SubscriptionMap> subscriptionMap) 
+	: messageRouter(std::move(messageRouter)), subscriptionMap(subscriptionMap)
 {
 }
 #pragma endregion

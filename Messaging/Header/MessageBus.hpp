@@ -44,7 +44,7 @@ public:
     * \param[in] messageRouter An object responsible for routing messages to subscribed consumers as they come in
     * \param[in] subscriptionMap An object responsible for tracking which consumers are subscribed to which topics
     * */
-    MessageBus (std::unique_ptr<MessageRouter> &&messageRouter, std::unique_ptr<SubscriptionMap> &&subscriptionMap);
+    MessageBus (std::unique_ptr<MessageRouter> &&messageRouter, std::shared_ptr<SubscriptionMap> subscriptionMap);
 #pragma endregion
 
 #pragma region Standard Constructors & Destructor
@@ -94,7 +94,7 @@ protected:
 private:
 #pragma region Private Fields
 	std::unique_ptr<MessageRouter> messageRouter;
-	std::unique_ptr<SubscriptionMap> subscriptionMap;
+	std::shared_ptr<SubscriptionMap> subscriptionMap;
 #pragma endregion
 };
 
