@@ -17,7 +17,7 @@
 #pragma endregion
 
 #pragma region Custom Constructors
-MessageRouter::MessageRouter(std::unique_ptr<SubscriptionMap> &&subscriptionMap) : subscriptionMap(std::move(subscriptionMap))
+MessageRouter::MessageRouter(std::shared_ptr<SubscriptionMap> subscriptionMap) : subscriptionMap(subscriptionMap)
 {
 	this->endpointMap = std::unordered_map<unsigned long, std::shared_ptr<MessageProducerEndpoint>>();
 }

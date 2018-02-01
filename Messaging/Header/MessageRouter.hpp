@@ -42,7 +42,7 @@ public:
     *
     * \param[in] subscriptionMap An object representing a mapping of topics to subscribing endpoint identifiers
     * */
-    MessageRouter (std::unique_ptr<SubscriptionMap> &&subscriptionMap);
+    MessageRouter (std::shared_ptr<SubscriptionMap> subscriptionMap);
 #pragma endregion
 
 #pragma region Standard Constructors & Destructor
@@ -94,7 +94,7 @@ private:
 #pragma region Private Fields
 	// TODO Replace with entityId_t when added
 	std::unordered_map<unsigned long, std::shared_ptr<MessageProducerEndpoint>> endpointMap;
-	std::unique_ptr<SubscriptionMap> subscriptionMap;
+	std::shared_ptr<SubscriptionMap> subscriptionMap;
 #pragma endregion
 };
 
