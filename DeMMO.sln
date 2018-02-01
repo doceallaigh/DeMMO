@@ -54,6 +54,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Remote", "Remote\Remote.vcxproj", "{17CC96B2-9230-4DEA-89B6-7072E4050328}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Messaging.Test", "Test\Messaging.Test\Messaging.Test.vcxproj", "{04E651EE-BAF3-4687-8644-66F2E73994E5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E4D96C73-02B1-4CC0-B492-D8FE787C404B} = {E4D96C73-02B1-4CC0-B492-D8FE787C404B}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
