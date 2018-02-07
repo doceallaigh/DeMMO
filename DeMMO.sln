@@ -58,6 +58,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Messaging.Test", "Test\Mess
 		{E4D96C73-02B1-4CC0-B492-D8FE787C404B} = {E4D96C73-02B1-4CC0-B492-D8FE787C404B}
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mock", "Mock", "{C9DEE250-15E5-4687-8089-299AE061D2E2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Messaging.Mock", "Mock\Messaging.Mock\Messaging.Mock.vcxproj", "{F34FA454-075F-4031-95FB-62F8AB34032D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -229,11 +233,22 @@ Global
 		{04E651EE-BAF3-4687-8644-66F2E73994E5}.Release|x64.Build.0 = Release|x64
 		{04E651EE-BAF3-4687-8644-66F2E73994E5}.Release|x86.ActiveCfg = Release|Win32
 		{04E651EE-BAF3-4687-8644-66F2E73994E5}.Release|x86.Build.0 = Release|Win32
+		{F34FA454-075F-4031-95FB-62F8AB34032D}.Debug|ARM.ActiveCfg = Debug|Win32
+		{F34FA454-075F-4031-95FB-62F8AB34032D}.Debug|x64.ActiveCfg = Debug|x64
+		{F34FA454-075F-4031-95FB-62F8AB34032D}.Debug|x64.Build.0 = Debug|x64
+		{F34FA454-075F-4031-95FB-62F8AB34032D}.Debug|x86.ActiveCfg = Debug|Win32
+		{F34FA454-075F-4031-95FB-62F8AB34032D}.Debug|x86.Build.0 = Debug|Win32
+		{F34FA454-075F-4031-95FB-62F8AB34032D}.Release|ARM.ActiveCfg = Release|Win32
+		{F34FA454-075F-4031-95FB-62F8AB34032D}.Release|x64.ActiveCfg = Release|x64
+		{F34FA454-075F-4031-95FB-62F8AB34032D}.Release|x64.Build.0 = Release|x64
+		{F34FA454-075F-4031-95FB-62F8AB34032D}.Release|x86.ActiveCfg = Release|Win32
+		{F34FA454-075F-4031-95FB-62F8AB34032D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{04E651EE-BAF3-4687-8644-66F2E73994E5} = {FB22E6FF-A989-4A4F-A1AB-138E6DD93019}
+		{F34FA454-075F-4031-95FB-62F8AB34032D} = {C9DEE250-15E5-4687-8089-299AE061D2E2}
 	EndGlobalSection
 EndGlobal
