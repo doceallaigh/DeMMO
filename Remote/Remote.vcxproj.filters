@@ -18,12 +18,4 @@
       <Extensions>tpp</Extensions>
     </Filter>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="README.md" />
-    <None Include="Template\README.md" />
-    <None Include="Source\README.md" />
-    <None Include="Resource\README.md" />
-    <None Include="Header\README.md" />
-    <None Include="Header\Interfaces\README.md" />
-  </ItemGroup>
 </Project>
