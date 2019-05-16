@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UI", "UI\UI.vcxproj", "{AEA5BEBD-12BF-4C46-A461-DEF93CFD7D1C}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -55,6 +55,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Remote", "Remote\Remote.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Messaging.Test", "Test\Messaging.Test\Messaging.Test.vcxproj", "{04E651EE-BAF3-4687-8644-66F2E73994E5}"
 	ProjectSection(ProjectDependencies) = postProject
+		{F34FA454-075F-4031-95FB-62F8AB34032D} = {F34FA454-075F-4031-95FB-62F8AB34032D}
 		{E4D96C73-02B1-4CC0-B492-D8FE787C404B} = {E4D96C73-02B1-4CC0-B492-D8FE787C404B}
 	EndProjectSection
 EndProject
@@ -250,5 +251,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{04E651EE-BAF3-4687-8644-66F2E73994E5} = {FB22E6FF-A989-4A4F-A1AB-138E6DD93019}
 		{F34FA454-075F-4031-95FB-62F8AB34032D} = {C9DEE250-15E5-4687-8089-299AE061D2E2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5C53FAF8-D3E9-4271-B4C0-1CFBD4D51465}
 	EndGlobalSection
 EndGlobal

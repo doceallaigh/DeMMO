@@ -24,17 +24,17 @@ class SubscriptionMap;
 * \remarks Promise(s)
 *     1. Messages sent to this module are routed to all modules subscribing to that message's topic
 * */
-class MessageBus 
+class MessageBus
 {
 #pragma region Class Assertions
 #pragma endregion
 
 public:
 #pragma region Operators
-    //! \cond \brief Copy assignment operator \endcond
+    //! \brief Copy assignment operator
     // MessageBus& operator= (const MessageBus &original);
 
-    //! \cond \brief Move assignment operator \endcond
+    //! \brief Move assignment operator
     // MessageBus& operator= (MessageBus &&original) noexcept;
 #pragma endregion
 
@@ -48,11 +48,11 @@ public:
 #pragma endregion
 
 #pragma region Standard Constructors & Destructor
-    //! \cond \brief Default Constructor \endcond
+    //! \brief Default Constructor
     // MessageBus(void) = default;
 
     //! \brief Copy Constructor
-    MessageBus(const MessageBus &original) = default;
+    // MessageBus(const MessageBus &original) = default;
 
     //! \brief Move Constructor
     // MessageBus(const MessageBus &&original) noexcept = default;

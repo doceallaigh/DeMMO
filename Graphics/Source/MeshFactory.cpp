@@ -1,3 +1,5 @@
+#include <string>
+
 #include "../Header/MeshFactory.hpp"
 #include "../Header/Mesh.hpp"
 

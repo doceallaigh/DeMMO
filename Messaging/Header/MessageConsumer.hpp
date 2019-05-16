@@ -21,17 +21,17 @@ class MessageConsumer
 
 public:
 #pragma region Operators
-    //! \cond \brief Copy assignment operator \endcond
+    //! \brief Copy assignment operator
     // MessageConsumer& operator= (const MessageConsumer &original);
 
-    //! \cond \brief Move assignment operator \endcond
+    //! \brief Move assignment operator
     // MessageConsumer& operator= (MessageConsumer &&original) noexcept;
 #pragma endregion
 
 #pragma region Custom Constructors
-    /*! \cond \brief <Brief description goes here> \endcond
+    /*! \brief \<Brief description goes here\>
     *
-    * \cond \param[in] <Parameter description goes here> \endcond
+    * \param[in] \<Parameter description goes here\>
     * */
     // MessageConsumer (T ... args);
 #pragma endregion
@@ -52,7 +52,7 @@ public:
 
 private:
 #pragma region Private Constructors
-    //! \cond \brief Private Default Constructor \endcond
+    //! \brief Private Default Constructor
     // MessageConsumer(void) = default;
 #pragma endregion
 

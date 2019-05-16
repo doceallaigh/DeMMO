@@ -12,7 +12,7 @@
 #pragma endregion
 
 #pragma region Type Definitions
-typedef unsigned long messageId_t;
+typedef typename unsigned long messageId_t;
 #pragma endregion
 
 /*! \brief Describes the basic unit by which modules trigger work for each other
@@ -27,7 +27,6 @@ public:
 	//! \brief The message ID, intended to be a unique identifier among message objects
 	messageId_t Id;
 
-	// TODO Evaluate whether or not this should be cached externally.
 	//! \brief The message payload, which allows the consumer to act on the message
 	std::shared_ptr<const TPayload> Payload;
 };

@@ -17,9 +17,9 @@ class MessageConsumerEndpoint;
 #pragma region Type Definitions
 #pragma endregion
 
-/*! \brief <Brief description goes here>
+/*! \brief \<Brief description goes here\>
  * 
- * <Detailed description goes here>
+ * \<Detailed description goes here\>
  * */
 class MessageProducerEndpoint 
 {
@@ -28,10 +28,10 @@ class MessageProducerEndpoint
 
 public:
 #pragma region Operators
-    //! \cond \brief Copy assignment operator \endcond
+    //! \brief Copy assignment operator
     // MessageProducerEndpoint& operator= (const MessageProducerEndpoint &original);
 
-    //! \cond \brief Move assignment operator \endcond
+    //! \brief Move assignment operator
     // MessageProducerEndpoint& operator= (MessageProducerEndpoint &&original) noexcept;
 #pragma endregion
 
@@ -44,7 +44,7 @@ public:
 #pragma endregion
 
 #pragma region Standard Constructors & Destructor
-    //! \cond \brief Default Constructor \endcond
+    //! \brief Default Constructor
     // MessageProducerEndpoint(void) = default;
 
     //! \brief Copy Constructor

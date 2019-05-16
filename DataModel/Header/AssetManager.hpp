@@ -4,19 +4,19 @@
 
 #include "../Header/AssetFactory.hpp"
 
-template<typename T>
-class AssetManager 
+template<typename TGen, typename TAsset>
+class AssetManager
 {
 public:
 	AssetManager();
 	~AssetManager();
-	void AddGenerator(std::string extension, AssetFactory<T>* assetFactory);
-	T* Generate(std::string fileName);
+	void AddGenerator(std::string extension, TGen* assetFactory);
+	TAsset* Generate(std::string fileName);
 protected:
-	virtual bool TryAddLiveAsset(std::string fileName, T* asset);
+	virtual bool TryAddLiveAsset(std::string fileName, TAsset* asset);
 private:
-	std::map<std::string, AssetFactory<T>*> generatorMap;
-	std::map<std::string, T*> liveAssetMap;
+	std::map<std::string, TGen*> generatorMap;
+	std::map<std::string, TAsset*> liveAssetMap;
 };
 
-#include "../Template/AssetManager.tpp"
+#include "../Template/AssetManager.ipp"

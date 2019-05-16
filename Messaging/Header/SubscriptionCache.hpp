@@ -15,25 +15,25 @@
 #pragma region Type Definitions
 #pragma endregion
 
-/*! \brief <Brief description goes here>
+/*! \brief \<Brief description goes here\>
  * 
- * <Detailed description goes here>
+ * \<Detailed description goes here\>
  * */
 class SubscriptionCache 
 {
 public:
 #pragma region Operators
-    //! \cond \brief Copy assignment operator \endcond
+    //! \brief Copy assignment operator
     // SubscriptionCache& operator= (const SubscriptionCache &original);
 
-    //! \cond \brief Move assignment operator \endcond
+    //! \brief Move assignment operator
     // SubscriptionCache& operator= (SubscriptionCache &&original) noexcept;
 #pragma endregion
 
 #pragma region Custom Constructors
-    /*! \cond \brief <Brief description goes here> \endcond
+    /*! \brief \<Brief description goes here\>
     *
-    * \cond \param[in] <Parameter description goes here> \endcond
+    * \param[in] \<Parameter description goes here\>
     * */
     // SubscriptionCache (T ... args);
 #pragma endregion
@@ -54,7 +54,7 @@ public:
 
 private:
 #pragma region Private Constructors
-    //! \cond \brief Private Default Constructor \endcond
+    //! \brief Private Default Constructor
     // SubscriptionCache(void) = default;
 #pragma endregion
 

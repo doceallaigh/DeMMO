@@ -4,5 +4,5 @@ template<typename T>
 class AssetFactory
 {
 public:
-	virtual T* Generate(std::string fileName) = 0;
+	T* Generate(std::string fileName);
 };

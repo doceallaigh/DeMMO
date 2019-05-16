@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\GLMathematics.0.9.5.4\build\native\GLMathematics.props" Condition="Exists('..\packages\GLMathematics.0.9.5.4\build\native\GLMathematics.props')" />
   <ItemGroup Label="ProjectConfigurations">
@@ -70,13 +70,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>J:\Repositories\MMO\packages\GLMathematics.0.9.5.4\build\native\include;J:\Repositories\MMO\packages\glfw.3.2.1\build\native\include;J:\Repositories\MMO\packages\glew.1.9.0.1\build\native\include;$(IncludePath)</IncludePath>
-    <LibraryPath>J:\Repositories\MMO\packages\glfw.3.2.1\build\native\lib\v140\Win32\static;J:\Repositories\MMO\packages\glew.1.9.0.1\build\native\lib\v110\Win32\Debug\static;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Source\DeMMO\packages\GLMathematics.0.9.5.4\build\native\include;C:\Source\DeMMO\packages\glfw.3.2.1\build\native\include;C:\Source\DeMMO\packages\glew.1.9.0.1\build\native\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Source\DeMMO\packages\glfw.3.2.1\build\native\lib\v140\x64\static;C:\Source\DeMMO\packages\glew.1.9.0.1\build\native\lib\v110\x64\Debug\static;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>J:\Repositories\MMO\packages\GLMathematics.0.9.5.4\build\native\include;J:\Repositories\MMO\packages\glfw.3.2.1\build\native\include;J:\Repositories\MMO\packages\glew.1.9.0.1\build\native\include;$(IncludePath)</IncludePath>
-    <LibraryPath>J:\Repositories\MMO\packages\glfw.3.2.1\build\native\lib\v140\Win32\dynamic;J:\Repositories\MMO\packages\glew.1.9.0.1\build\native\lib\v110\Win32\Debug\dynamic;$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -85,7 +82,7 @@
     </ClCompile>
     <Link />
     <Link>
-      <AdditionalLibraryDirectories>J:\Repositories\MMO\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies />
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -94,14 +91,8 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
-    <Link />
-    <Link />
-    <Link />
-    <Link />
-    <Link />
     <Link>
-      <AdditionalDependencies>opengl32.lib;glew.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>J:\Repositories\MMO\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -150,12 +141,17 @@
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Graphics\Graphics.vcxproj">
+      <Project>{b7839c36-5110-4f46-a551-81051c4b19c2}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="..\packages\glfw.redist.3.2.1\build\native\glfw.redist.targets" Condition="Exists('..\packages\glfw.redist.3.2.1\build\native\glfw.redist.targets')" />
-    <Import Project="..\packages\glfw.3.2.1\build\native\glfw.targets" Condition="Exists('..\packages\glfw.3.2.1\build\native\glfw.targets')" />
     <Import Project="..\packages\glew.redist.1.9.0.1\build\native\glew.redist.targets" Condition="Exists('..\packages\glew.redist.1.9.0.1\build\native\glew.redist.targets')" />
     <Import Project="..\packages\glew.1.9.0.1\build\native\glew.targets" Condition="Exists('..\packages\glew.1.9.0.1\build\native\glew.targets')" />
+    <Import Project="..\packages\glfw.redist.3.2.1\build\native\glfw.redist.targets" />
+    <Import Project="..\packages\glfw.3.2.1\build\native\glfw.targets" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

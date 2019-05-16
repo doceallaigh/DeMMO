@@ -1,11 +1,28 @@
+#define GLEW_STATIC
+#undef GLFW_DLL
+
 #include <GL/glew.h>
 #include <glm/ext.hpp>
 #include <iostream>
 #include <fstream>
+#include <string>
 #include "../Header/OpenGLWindow.hpp"
 
 OpenGLWindow::OpenGLWindow() 
 {
+	// TODO_BEFORE_MERGE Remove most of this
+	if (!glfwInit())
+	{
+		// TODO throw something more meaningful
+		throw 0;
+	}
+
+	glfwWindowHint(GLFW_SAMPLES, 4);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
+	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
 	this->x = 0;
 	this->y = 0;
 	this->width = 1024;
@@ -13,6 +30,26 @@ OpenGLWindow::OpenGLWindow()
 
 	this->window = glfwCreateWindow(this->width, this->height, "MMO", nullptr, nullptr);
 	this->monitor = glfwGetPrimaryMonitor();
+
+	this->SetActive();
+
+	// Initialize GLEW
+	glewExperimental = true; // Needed for core profile
+	GLenum error = glewInit();
+	if (error != GLEW_OK) {
+		fprintf(stderr, "Failed to initialize GLEW\n");
+		fprintf(stderr, (char*)(glewGetErrorString(error)));
+		getchar();
+		glfwTerminate();
+	}
+
+	// Enable depth test
+	glEnable(GL_DEPTH_TEST);
+	// Accept fragment if it closer to the camera than the former one
+	glDepthFunc(GL_LESS);
+
+	// Cull triangles which normal is not towards the camera
+	glEnable(GL_CULL_FACE);
 }
 
 // TODO ELIMINATE THIS
@@ -27,8 +64,8 @@ GLuint LoadShaders(const char * vertex_file_path, const char * fragment_file_pat
 	std::ifstream VertexShaderStream(vertex_file_path, std::ios::in);
 	if (VertexShaderStream.is_open()) {
 		std::string Line = "";
-		while (getline(VertexShaderStream, Line))
-			VertexShaderCode += "/n" + Line;
+		while (std::getline(VertexShaderStream, Line))
+			VertexShaderCode += "\n" + Line;
 		VertexShaderStream.close();
 	}
 	else {
@@ -42,17 +79,16 @@ GLuint LoadShaders(const char * vertex_file_path, const char * fragment_file_pat
 	std::ifstream FragmentShaderStream(fragment_file_path, std::ios::in);
 	if (FragmentShaderStream.is_open()) {
 		std::string Line = "";
-		while (getline(FragmentShaderStream, Line))
-			FragmentShaderCode += "/n" + Line;
+		while (std::getline(FragmentShaderStream, Line))
+			FragmentShaderCode += "\n" + Line;
 		FragmentShaderStream.close();
 	}
 
 	GLint Result = GL_FALSE;
 	int InfoLogLength;
 
-
 	// Compile Vertex Shader
-	printf("Compiling shader : %s/n", vertex_file_path);
+	printf("Compiling shader : %s\n", vertex_file_path);
 	char const * VertexSourcePointer = VertexShaderCode.c_str();
 	glShaderSource(VertexShaderID, 1, &VertexSourcePointer, NULL);
 	glCompileShader(VertexShaderID);
@@ -63,13 +99,11 @@ GLuint LoadShaders(const char * vertex_file_path, const char * fragment_file_pat
 	if (InfoLogLength > 0) {
 		std::vector<char> VertexShaderErrorMessage(InfoLogLength + 1);
 		glGetShaderInfoLog(VertexShaderID, InfoLogLength, NULL, &VertexShaderErrorMessage[0]);
-		printf("%s/n", &VertexShaderErrorMessage[0]);
+		printf("%s\n", &VertexShaderErrorMessage[0]);
 	}
 
-
-
 	// Compile Fragment Shader
-	printf("Compiling shader : %s/n", fragment_file_path);
+	printf("Compiling shader : %s\n", fragment_file_path);
 	char const * FragmentSourcePointer = FragmentShaderCode.c_str();
 	glShaderSource(FragmentShaderID, 1, &FragmentSourcePointer, NULL);
 	glCompileShader(FragmentShaderID);
@@ -80,13 +114,11 @@ GLuint LoadShaders(const char * vertex_file_path, const char * fragment_file_pat
 	if (InfoLogLength > 0) {
 		std::vector<char> FragmentShaderErrorMessage(InfoLogLength + 1);
 		glGetShaderInfoLog(FragmentShaderID, InfoLogLength, NULL, &FragmentShaderErrorMessage[0]);
-		printf("%s/n", &FragmentShaderErrorMessage[0]);
+		printf("%s\n", &FragmentShaderErrorMessage[0]);
 	}
 
-
-
 	// Link the program
-	printf("Linking program/n");
+	printf("Linking program\n");
 	GLuint ProgramID = glCreateProgram();
 	glAttachShader(ProgramID, VertexShaderID);
 	glAttachShader(ProgramID, FragmentShaderID);
@@ -98,9 +130,8 @@ GLuint LoadShaders(const char * vertex_file_path, const char * fragment_file_pat
 	if (InfoLogLength > 0) {
 		std::vector<char> ProgramErrorMessage(InfoLogLength + 1);
 		glGetProgramInfoLog(ProgramID, InfoLogLength, NULL, &ProgramErrorMessage[0]);
-		printf("%s/n", &ProgramErrorMessage[0]);
+		printf("%s\n", &ProgramErrorMessage[0]);
 	}
-
 
 	glDetachShader(ProgramID, VertexShaderID);
 	glDetachShader(ProgramID, FragmentShaderID);
@@ -117,12 +148,19 @@ void OpenGLWindow::Render(const Mesh& mesh)
 	{
 		Color clearColor = this->camera->clearColor;
 
+		// TODO_TOMORROW THIS WAS VERY IMPORTANT
+		GLuint VertexArrayID;
+		glGenVertexArrays(1, &VertexArrayID);
+		glBindVertexArray(VertexArrayID);
+
 		// TODO This shouldn't be done every frame
 		glClearColor(clearColor.r, clearColor.g, clearColor.b, clearColor.a);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		// Create and compile our GLSL program from the shaders
 		GLuint programID = LoadShaders("StandardShading.vertexshader", "StandardShading.fragmentshader");
+
+		glUseProgram(programID);
 
 		// Get a handle for our "MVP" uniform
 		GLuint MatrixID = glGetUniformLocation(programID, "MVP");

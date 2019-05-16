@@ -1,26 +1,22 @@
 #pragma once
 
 #pragma region Library Includes
-#include <memory>
 #pragma endregion
 
 #pragma region Local Includes
 #pragma endregion
 
 #pragma region Forward Declarations
-template <typename TPayload>
-struct Message;
 #pragma endregion
 
 #pragma region Type Definitions
 #pragma endregion
 
-/*! \brief Serves to obfuscate the production end of the MessageQueue from the message consumer
-*
-* \remarks Allows the consumer to:
-*     1. Lazily retrieve Messages from the queue/producer
-* */
-class MessageConsumerEndpoint 
+/*! \brief \<Brief description goes here\>
+ * 
+ * \<Detailed description goes here\>
+ * */
+class EntityComponent 
 {
 #pragma region Class Assertions
 #pragma endregion
@@ -28,10 +24,10 @@ class MessageConsumerEndpoint
 public:
 #pragma region Operators
     //! \brief Copy assignment operator
-    // MessageConsumerEndpoint& operator= (const MessageConsumerEndpoint &original);
+    // EntityComponent& operator= (const EntityComponent &original);
 
     //! \brief Move assignment operator
-    // MessageConsumerEndpoint& operator= (MessageConsumerEndpoint &&original) noexcept;
+    // EntityComponent& operator= (EntityComponent &&original) noexcept;
 #pragma endregion
 
 #pragma region Custom Constructors
@@ -39,33 +35,31 @@ public:
     *
     * \param[in] \<Parameter description goes here\>
     * */
-    // MessageConsumerEndpoint (T ... args);
+    // EntityComponent (T ... args);
 #pragma endregion
 
 #pragma region Standard Constructors & Destructor
     //! \brief Default Constructor
-    MessageConsumerEndpoint(void) = default;
+    EntityComponent(void) = default;
 
     //! \brief Copy Constructor
-    MessageConsumerEndpoint(const MessageConsumerEndpoint &original) = default;
+    EntityComponent(const EntityComponent &original) = default;
 
     //! \brief Move Constructor
-    // MessageConsumerEndpoint(const MessageConsumerEndpoint &&original) noexcept = default;
+    // EntityComponent(const EntityComponent &&original) noexcept = default;
 
     //! \brief Destructor
-    virtual ~MessageConsumerEndpoint(void) noexcept = default;
+    virtual ~EntityComponent(void) noexcept = default;
 #pragma endregion
 
 private:
 #pragma region Private Constructors
     //! \brief Private Default Constructor
-    // MessageConsumerEndpoint(void) = default;
+    // EntityComponent(void) = default;
 #pragma endregion
 
 public:
 #pragma region Public Methods
-	template <typename TPayload>
-	const std::shared_ptr<const Message<TPayload>> ReceiveMessage(void);
 #pragma endregion
 
 protected:
@@ -88,5 +82,3 @@ private:
 #pragma region Private Fields
 #pragma endregion
 };
-
-#include "../Template/MessageConsumerEndpoint.tpp"
