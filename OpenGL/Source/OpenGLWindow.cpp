@@ -2,14 +2,23 @@
 #undef GLFW_DLL
 
 #include <GL/glew.h>
+#include <GLFW/glfw3.h>
 #include <glm/ext.hpp>
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "../Header/OpenGLWindow.hpp"
+#include "../../Graphics/Header/Window.hpp"
 
-OpenGLWindow::OpenGLWindow() 
+struct Window::impl
 {
+	GLFWmonitor* monitor;
+	GLFWwindow* window;
+};
+
+Window::Window() 
+{
+	this->pImpl = std::make_unique<Window::impl>();
+
 	// TODO_BEFORE_MERGE Remove most of this
 	if (!glfwInit())
 	{
@@ -28,8 +37,8 @@ OpenGLWindow::OpenGLWindow()
 	this->width = 1024;
 	this->height = 768;
 
-	this->window = glfwCreateWindow(this->width, this->height, "MMO", nullptr, nullptr);
-	this->monitor = glfwGetPrimaryMonitor();
+	this->pImpl->window = glfwCreateWindow(this->width, this->height, "MMO", nullptr, nullptr);
+	this->pImpl->monitor = glfwGetPrimaryMonitor();
 
 	this->SetActive();
 
@@ -142,7 +151,7 @@ GLuint LoadShaders(const char * vertex_file_path, const char * fragment_file_pat
 	return ProgramID;
 }
 
-void OpenGLWindow::Render(const Mesh& mesh) 
+void Window::Render(const Mesh& mesh) 
 {
 	if (this->camera != nullptr) 
 	{
@@ -260,24 +269,24 @@ void OpenGLWindow::Render(const Mesh& mesh)
 		glDisableVertexAttribArray(2);
 
 		// Swap buffers
-		glfwSwapBuffers(this->window);
+		glfwSwapBuffers(this->pImpl->window);
 		glfwPollEvents();
 	}
 }
 
-void OpenGLWindow::SetActive()
+void Window::SetActive()
 {
-	glfwMakeContextCurrent(this->window);
+	glfwMakeContextCurrent(this->pImpl->window);
 }
 
-void OpenGLWindow::HandleFullScreenChanged() 
+void Window::HandleFullScreenChanged() 
 {
 	GLFWmonitor* monitor = nullptr;
 
 	if (this->fullScreen) 
 	{
-		monitor = this->monitor;
+		monitor = this->pImpl->monitor;
 	}
 
-	glfwSetWindowMonitor(this->window, this->monitor, this->x, this->y, this->width, this->height, 60);
+	glfwSetWindowMonitor(this->pImpl->window, this->pImpl->monitor, this->x, this->y, this->width, this->height, 60);
 }

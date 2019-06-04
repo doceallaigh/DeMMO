@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 #include "../Header/OpenGLWindowManager.hpp"
-#include "../Header/OpenGLWindow.hpp"
+#include "../../Graphics/Header/Window.hpp"
 #include "../../DataModel/Header/AssetManager.hpp"
 #include "../../DataModel/Template/AssetManager.ipp"
 #include "../../Graphics/Header/Mesh.hpp"
@@ -18,12 +18,12 @@ int main()
 
 	// Initialize OpenGL with default settings
 	OpenGLWindowManager* windowManager = OpenGLWindowManager::GetInstance();
-	OpenGLWindow* window = windowManager->GenerateWindow();
+	Window* window = windowManager->GenerateWindow();
 
 	window->SetActive();
 
-	AssetManager<OBJFactory, Mesh> meshManager = AssetManager<OBJFactory, Mesh>();
-	meshManager.AddGenerator(std::string(".obj"), new OBJFactory());
+	AssetManager<Mesh> meshManager = AssetManager<Mesh>();
+	meshManager.AddGenerator(std::string(".obj"), OBJFactory::Generate);
 
 	Mesh* mesh = meshManager.Generate(std::string("C:\\Source\\DeMMO\\Resources\\suzanne.obj"));
 

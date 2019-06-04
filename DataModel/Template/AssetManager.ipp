@@ -1,41 +1,36 @@
 #pragma once
 #include <string>
 
-template<typename TGen, typename TAsset>
-AssetManager<TGen, TAsset>::AssetManager() : generatorMap(std::map<std::string, TGen*>()), liveAssetMap(std::map<std::string, TAsset*>())
+template<typename TAsset>
+AssetManager<TAsset>::AssetManager() : generatorMap(std::map<std::string, TAsset* (*)(std::string)>()), liveAssetMap(std::map<std::string, TAsset*>())
 {
 }
 
-template<typename TGen, typename TAsset>
-AssetManager<TGen, TAsset>::~AssetManager()
+template<typename TAsset>
+AssetManager<TAsset>::~AssetManager()
 {
-	for (auto kvp : this->generatorMap)
-	{
-		delete kvp.second;
-	}
-
 	for (auto kvp : this->liveAssetMap)
 	{
 		delete kvp.second;
 	}
 }
 
-template<typename TGen, typename TAsset>
-void AssetManager<TGen, TAsset>::AddGenerator(std::string extension, TGen* assetFactory)
+template<typename TAsset>
+void AssetManager<TAsset>::AddGenerator(std::string extension, TAsset* (*assetGenerator)(std::string fileName))
 {
-	this->generatorMap.emplace(extension, assetFactory);
+	this->generatorMap.emplace(extension, assetGenerator);
 }
 
-template<typename TGen, typename TAsset>
-TAsset* AssetManager<TGen, TAsset>::Generate(std::string fileName)
+template<typename TAsset>
+TAsset* AssetManager<TAsset>::Generate(std::string fileName)
 {
 	int extensionIndex = fileName.find_last_of('.');
 	std::string extension = fileName.substr(extensionIndex, fileName.length() - extensionIndex);
-	return this->generatorMap[extension]->Generate(fileName);
+	return this->generatorMap[extension](fileName);
 }
 
-template<typename TGen, typename TAsset>
-bool AssetManager<TGen, TAsset>::TryAddLiveAsset(std::string fileName, TAsset* asset)
+template<typename TAsset>
+bool AssetManager<TAsset>::TryAddLiveAsset(std::string fileName, TAsset* asset)
 {
 	if (this->liveAssetMap[fileName])
 	{

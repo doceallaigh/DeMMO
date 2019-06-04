@@ -22,9 +22,6 @@
     <ClInclude Include="Header\OpenGLRenderManager.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Header\OpenGLWindow.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Header\OpenGLWindowManager.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>

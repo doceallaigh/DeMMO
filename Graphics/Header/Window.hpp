@@ -1,18 +1,24 @@
 #pragma once
+#include <memory>
+
 #include "../Header/RenderTarget.hpp"
 
 class Window : public RenderTarget
 {
 public:
-	virtual void SetActive(void) = 0;
+	Window();
+	void SetActive(void);
 
 	bool GetFullScreen();
 	void SetFullScreen(bool fullScreen);
 	bool ToggleFullScreen();
+	void Render(const Mesh& mesh);
 protected:
-	virtual void HandleFullScreenChanged() = 0;
+	void HandleFullScreenChanged();
 
 	bool fullScreen;
 	int x, y, width, height;
 private:
+	struct impl;
+	std::unique_ptr<impl> pImpl;
 };

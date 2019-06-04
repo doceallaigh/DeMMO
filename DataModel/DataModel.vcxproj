@@ -20,7 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\AssetManager.hpp" />
-    <ClInclude Include="Header\AssetFactory.hpp" />
     <ClInclude Include="Header\EntityComponent.hpp">
       <SubType>
       </SubType>

@@ -1,8 +1,8 @@
 #pragma once
 #include "../../Graphics/Header/WindowManager.hpp"
-#include "../Header/OpenGLWindow.hpp"
+#include "../../Graphics/Header/Window.hpp"
 
-class OpenGLWindowManager : public WindowManager<OpenGLWindow>
+class OpenGLWindowManager : public WindowManager<Window>
 {
 public:
 	static OpenGLWindowManager *GetInstance();
